@@ -1,0 +1,7 @@
+* source ASSIGNMENT1-1
+R_R1         1 2  20  
+R_R3         2 3  10  
+R_R2         2 0  30  
+R_R4         3 0  40  
+V_V1         1 0 120Vdc
+I_I1         0 3 DC 3Adc  

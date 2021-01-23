@@ -1,0 +1,18 @@
+** Profile: "SCHEMATIC1-SIM_1_BIASPOINT"  [ D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-1\assignment1-1-SCHEMATIC1-SIM_1_BIASPOINT.sim ] 
+
+** Creating circuit file "assignment1-1-SCHEMATIC1-SIM_1_BIASPOINT.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.PROBE 
+.INC "assignment1-1-SCHEMATIC1.net" 
+
+.INC "assignment1-1-SCHEMATIC1.als"
+
+
+.END
