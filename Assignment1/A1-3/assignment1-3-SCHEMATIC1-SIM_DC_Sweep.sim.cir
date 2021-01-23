@@ -1,0 +1,19 @@
+** Profile: "SCHEMATIC1-SIM_DC_Sweep"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assignments\Assignment1\A1-3\assignment1-3-SCHEMATIC1-SIM_DC_Sweep.sim ] 
+
+** Creating circuit file "assignment1-3-SCHEMATIC1-SIM_DC_Sweep.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN I_I2 0 1 1m 
+.PROBE 
+.INC "assignment1-3-SCHEMATIC1.net" 
+
+.INC "assignment1-3-SCHEMATIC1.als"
+
+
+.END

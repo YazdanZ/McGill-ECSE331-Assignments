@@ -1,0 +1,64 @@
+
+**** 01/23/21 17:33:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM_DC_Sweep"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignmen
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "assignment1-3-SCHEMATIC1-SIM_DC_Sweep.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN I_I2 0 1 1m 
+.PROBE 
+.INC "assignment1-3-SCHEMATIC1.net" 
+
+
+**** INCLUDING assignment1-3-SCHEMATIC1.net ****
+* source ASSIGNMENT1-3
+R_R1         B 0  4  
+R_R2         B N00063  2  
+R_R4         N00063 N00107  2  
+R_R3         N00063 0  6  
+I_I1         0 B DC 5Adc  
+E_E1         N00063 B B 0 2
+I_I2         0 N00107 DC 0Adc  
+
+**** RESUMING assignment1-3-SCHEMATIC1-SIM_DC_Sweep.sim.cir ****
+.INC "assignment1-3-SCHEMATIC1.als"
+
+
+
+**** INCLUDING assignment1-3-SCHEMATIC1.als ****
+.ALIASES
+R_R1            R1(1=B 2=0 )
+R_R2            R2(1=B 2=N00063 )
+R_R4            R4(1=N00063 2=N00107 )
+R_R3            R3(1=N00063 2=0 )
+I_I1            I1(+=0 -=B )
+E_E1            E1(3=N00063 4=B 1=B 2=0 )
+I_I2            I2(+=0 -=N00107 )
+_    _(a=0)
+_    _(b=B)
+.ENDALIASES
+
+**** RESUMING assignment1-3-SCHEMATIC1-SIM_DC_Sweep.sim.cir ****
+.END
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

@@ -7,10 +7,18 @@
     (File ".\assignment1-3.dsn"
       (Type "Schematic Design"))
     (BuildFileAddedOrDeleted "x")
-    (CompileFileAddedOrDeleted "x"))
-  (Folder "Outputs")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag ".\false"))
+  (Folder "Outputs"
+    (File ".\assignment1-3-schematic1.net"
+      (Type "Report")))
   (Folder "PSpice Resources"
-    (Folder "Simulation Profiles")
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\assignment1-3-schematic1-sim_dc_sweep.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\assignment1-3-schematic1-sim_dc_sweep.sim"
+        (DisplayName "SCHEMATIC1-SIM_DC_Sweep")
+        (Type "PSpice Profile")))
     (Folder "Model Libraries"
       (Sort User))
     (Folder "Stimulus Files"
@@ -19,15 +27,18 @@
       (Sort User)))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
-    (E
-      (FullPartName "E.Normal")
-      (LibraryName
-         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
-      (DeviceIndex "0"))
     (IDC
       (FullPartName "IDC.Normal")
       (LibraryName
          "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (E
+      (FullPartName "E.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
       (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
@@ -37,14 +48,7 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources"
-         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\assignment1-3.dsn")
-      (Path "Design Resources"
-         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\assignment1-3.dsn"
-         "SCHEMATIC1")
-      (Select "Design Resources"
-         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\assignment1-3.dsn"
-         "SCHEMATIC1" "PAGE1"))
+      (Path "Outputs"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -55,10 +59,10 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 2 3 -1 -1 -8 -31 130 1738 130 772")
-        (Scroll "553 123")
+        (Scroll "553 98")
         (Zoom "250")
         (Occurrence "/"))
       (Path
-         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\Assignment1-3.dsn")
+         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\ASSIGNMENT1-3.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE1"))))
