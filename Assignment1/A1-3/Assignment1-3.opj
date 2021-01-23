@@ -3,7 +3,11 @@
   (ProjectType "Analog or A/D Mixed Mode")
   (Folder "Design Resources"
     (Folder "Library")
-    (NoModify))
+    (NoModify)
+    (File ".\assignment1-3.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x"))
   (Folder "Outputs")
   (Folder "PSpice Resources"
     (Folder "Simulation Profiles")
@@ -13,4 +17,48 @@
       (Sort User))
     (Folder "Include Files"
       (Sort User)))
-  (DefaultLibraryBrowseDirectory "library\PSpice"))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (E
+      (FullPartName "E.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (IDC
+      (FullPartName "IDC.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\assignment1-3.dsn")
+      (Path "Design Resources"
+         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\assignment1-3.dsn"
+         "SCHEMATIC1")
+      (Select "Design Resources"
+         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\assignment1-3.dsn"
+         "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 590"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 130 1738 130 772")
+        (Scroll "553 123")
+        (Zoom "250")
+        (Occurrence "/"))
+      (Path
+         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT1\A1-3\Assignment1-3.dsn")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

@@ -3,14 +3,57 @@
   (ProjectType "Analog or A/D Mixed Mode")
   (Folder "Design Resources"
     (Folder "Library")
-    (NoModify))
-  (Folder "Outputs")
+    (NoModify)
+    (File ".\assignment1-1.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag ".\false"))
+  (Folder "Outputs"
+    (File ".\assignment1-1-schematic1.net"
+      (Type "Report")))
   (Folder "PSpice Resources"
-    (Folder "Simulation Profiles")
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\assignment1-1-schematic1-sim_1_biaspoint.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\assignment1-1-schematic1-sim_1_biaspoint.sim"
+        (DisplayName "SCHEMATIC1-SIM_1_BIASPOINT")
+        (Type "PSpice Profile")))
     (Folder "Model Libraries"
       (Sort User))
     (Folder "Stimulus Files"
       (Sort User))
     (Folder "Include Files"
       (Sort User)))
-  (DefaultLibraryBrowseDirectory "library\PSpice"))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (GND
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (IDC
+      (FullPartName "IDC.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory
+     "C:\Program Files\OrCAD_Demo\Capture\Library\Pspice")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 629"))
+      (Tab 0))))

@@ -1,0 +1,93 @@
+
+**** 01/23/21 17:13:16 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM_BIASPOINT"  [ D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNME
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "assignment1-2-SCHEMATIC1-SIM_BIASPOINT.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.PROBE 
+.INC "assignment1-2-SCHEMATIC1.net" 
+
+
+**** INCLUDING assignment1-2-SCHEMATIC1.net ****
+* source ASSIGNMENT1-2
+V_V1         N00046 0 24Vdc
+R_R1         N00046 N00052  4  
+R_R2         N00052 0  2  
+R_R3         N00052 N00076  2  
+R_R4         N00052 B  1  
+R_R5         B 0  8  
+R_R6         B 0  4  
+E_E1         B N00076 B 0 3
+
+**** RESUMING assignment1-2-SCHEMATIC1-SIM_BIASPOINT.sim.cir ****
+.INC "assignment1-2-SCHEMATIC1.als"
+
+
+
+**** INCLUDING assignment1-2-SCHEMATIC1.als ****
+.ALIASES
+V_V1            V1(+=N00046 -=0 )
+R_R1            R1(1=N00046 2=N00052 )
+R_R2            R2(1=N00052 2=0 )
+R_R3            R3(1=N00052 2=N00076 )
+R_R4            R4(1=N00052 2=B )
+R_R5            R5(1=B 2=0 )
+R_R6            R6(1=B 2=0 )
+E_E1            E1(3=B 4=N00076 1=B 2=0 )
+_    _(a=0)
+_    _(b=B)
+.ENDALIASES
+
+**** RESUMING assignment1-2-SCHEMATIC1-SIM_BIASPOINT.sim.cir ****
+.END
+
+**** 01/23/21 17:13:16 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM_BIASPOINT"  [ D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNME
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    B)   10.6670  (N00046)   24.0000 (N00052)    2.6667 (N00076)  -21.3330 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.333E+00
+
+    TOTAL POWER DISSIPATION   1.28E+02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+
