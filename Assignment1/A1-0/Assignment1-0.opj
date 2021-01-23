@@ -1,0 +1,81 @@
+(ExpressProject "Assignment1"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File
+       "D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\A1\assignment1.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag ".\false"))
+  (Folder "Outputs"
+    (File
+       "D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\A1\assignment1-schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\assignment1-schematic1-bias_point_sim.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\assignment1-schematic1-sim-0-biaspoint.sim"
+        (DisplayName "SCHEMATIC1-SIM-0-BiasPoint")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\assignment1-schematic1-bias_point_sim.sim"
+        (DisplayName "SCHEMATIC1-BIAS_POINT_SIM")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Program Files\OrCAD_Demo\Capture\Library\Pspice")
+  (PartMRUSelector
+    (GND
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (IDC
+      (FullPartName "IDC.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (ABM
+      (FullPartName "ABM.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ABM.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\A1\assignment1.dsn")
+      (Path "Design Resources"
+         "D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\A1\assignment1.dsn"
+         "SCHEMATIC1")
+      (Select "Design Resources"
+         "D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\A1\assignment1.dsn"
+         "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 0 0 4 946 26 626"))
+      (Tab 0))))
