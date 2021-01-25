@@ -1,4 +1,4 @@
-\documentclass[conference, 14pt]{IEEEtran}
+\documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 \usepackage{blindtext}
 \usepackage{graphicx}
@@ -24,24 +24,19 @@
     \IEEEauthorblockA{260929944 \\
     \textit{james.wu4@mail.mcgill.ca}}
 }
-
-
 \maketitle
-
 \clearpage
 
 \begin{abstract}
-    SPICE (Simulation Program for Integrated Circuits Emphasis) is a general-purpose circuit simulator. In this laboratory, we demonstrate the basics of PSPICE using three experiments. The results obtained using PSPICE simulations are then compared with theoretical results obtained by manual circuit analysis. The three experiments consist of finding the voltage at given nodes, the current in given branches, and the Thevenin and Norton equivalent in three circuits. Despite finding the same results using manual circuit analysis, analysis using PSPICE simulation is significantly faster and removes the possibility of calculation errors. Moreover, PSPICE enables us to solve complicated circuits, which would be a very long task if done manually.
+    SPICE (Simulation Program for Integrated Circuits Emphasis) is a general-purpose circuit simulator. In this laboratory, we practiced the basics of creating circuit schematics and simulating them in PSPICE using three experiments. The results obtained using PSPICE simulations were then compared with theoretical results obtained by manual circuit analysis. The three experiments consisted of finding the voltage at given nodes, the current in given branches, and the Thevenin and Norton equivalent in three circuits. Despite finding the same results using manual circuit analysis, analysis using PSPICE simulation was significantly faster and reduced the possibility of errors. Moreover, PSPICE enabled us to solve complicated circuits, which would be a very long task if done manually.
 \end{abstract}
-
 
 \section{Introduction}
 
 \subsection*{Experiment 1}
-This experiment required using PSPICE to find the voltage values at the three nodes (1, 2, and 3) in the given circuit. The given circuit is shown in figure \ref{fig:circuit1}.
+This experiment required using PSPICE to find the voltage values at the three nodes (\textit{1, 2,} and \textit{3}) in the given circuit. The given circuit is shown in figure \ref{fig:circuit1}.
 \begin{figure}[h]
     \caption{Exercise circuit}
-    \centering
     \includegraphics[scale=0.30]{ex1}
     \label{fig:circuit1}
 \end{figure}
@@ -50,7 +45,6 @@ This experiment required using PSPICE to find the voltage values at the three no
 This experiment required using PSPICE to find the current values in three branches ($i_1$, $i_2$, and $i_3$). The given circuit is shown in figure \ref{fig:circuit2}.
 \begin{figure}[h]
     \caption{Exercise circuit}
-    \centering
     \includegraphics[scale=0.39]{ex2}
     \label{fig:circuit2}
 \end{figure}
@@ -59,23 +53,53 @@ This experiment required using PSPICE to find the current values in three branch
 This experiment required using PSPICE to find the Thevenin/Norton equivalent of a given circuit. The given circuit is shown in figure \ref{fig:circuit3}.
 \begin{figure}[h]
     \caption{Exercise circuit}
-    \centering
     \includegraphics[scale=0.39]{ex3}
     \label{fig:circuit3}
 
 \end{figure}
-\section{Exercises}
 
-\subsection{Exercise 1}
-\blindtext
 
-\subsection{Exercise 2}
-\blindtext
+\section{Experiments}
 
-\subsection{Exercise 3}
-\blindtext
+\subsection*{Experiment 1}
+We first created a schematic of the circuit given in figure \ref{fig:circuit1}. Drawing the schematic of the circuit required the use of four resistors $R$ from the \textit{Analog} library, a \textit{DC} independent voltage source, a \textit{DC} independent current source from the \textit{Source} library, wires, and a ground as can be seen in figure \ref{fig:circuit4}.\\
+Once the circuit schematic was completed, we performed a \textit{DC} analysis using \textit{DC} bias point simulation in PSPICE to find the voltages at the given nodes. DC bias point voltage simulation results can be seen in figure \ref{fig:circuit4}.
+\begin{figure}[h]
+    \caption{Exercise 1 circuit schematic and simulation results}
+    \includegraphics[scale=0.65]{circuit1}
+    \label{fig:circuit4}
+
+\end{figure}
+
+As figure \ref{fig:circuit4} indicates, the voltage values at nodes \textit{1{\normalfont ,} 2{\normalfont, and} 3} were found to be \textit{\textbf{120V{\normalfont ,} 81.29V{\normalfont , and} 89.03V}} respectively. \\
+Results found using PSPICE DC bias point voltage analysis were then verified by manual circuit analysis. The voltage values at the three nodes found by manual circuit analysis shown in Appendix \ref{FirstAppendix} are consistent with values found from the PSPICE simulation.
+
+\subsection*{Exercise 2}
+A schematic of the circuit given in figure \ref{fig:circuit2} was created with a \textit{DC} independent voltage source from the \textit{Source} library, six resistors \textit{R}, and a voltage-controlled voltage source \textit{(VCVS)} from the \textit{Analog} library. The voltage-controlled voltage source was given a gain of \textit{3} and was controlled by the voltage across a resistor.\\
+We then simulated the schematic using \textit{DC} bias point current simulation and found the current in the given branches. The schematic created in PSPICE as well as the simulation results can be seen in figure \ref{fig:circuit5}.
+
+\begin{figure}[h]
+    \caption{Exercise 2 circuit schematic and simulation results}
+    \includegraphics[scale=0.5]{circuit2}
+    \label{fig:circuit5}
+\end{figure}
+
+As shown in figure \ref{fig:circuit5}, the currents $i_1$, $i_2$, and $i_3$ were found to be \textbf{1.33A{\normalfont,} 1.33A{\normalfont, and} 2.67A} respectively. This results, found using PSPICE \textit{DC} bias point current simulation were compared to manual circuit analysis shown in Appendix \ref{SecondAppendix}. This comparison showed same current values for the PSPICE simulation and manual circuit analysis.
+
+\subsection*{Exercise 3}
+
 
 \section{Conclusion}
 \blindtext
 
+\clearpage
+\appendix
+\subsection*{Exercise 1}
+\label{FirstAppendix}
+
+\subsection*{Exercise 2}
+\label{SecondAppendix}
+
+\subsection*{Exercise 3}
+\label{ThirdAppendix}
 \end{document}
