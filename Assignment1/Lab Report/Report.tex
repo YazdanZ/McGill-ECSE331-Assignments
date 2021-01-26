@@ -84,10 +84,10 @@ We then simulated the schematic using \textit{DC} bias point current simulation 
     \label{fig:circuit5}
 \end{figure}
 
-As shown in figure \ref{fig:circuit5}, the currents $i_1$, $i_2$, and $i_3$ were found to be \textbf{1.33A{\normalfont,} 1.33A{\normalfont, and} 2.67A} respectively. This results, found using PSPICE \textit{DC} bias point current simulation were compared to manual circuit analysis shown in Appendix \ref{SecondAppendix}. This comparison showed same current values for the PSPICE simulation and manual circuit analysis.
+As shown in figure \ref{fig:circuit5}, the currents $i_1$, $i_2$, and $i_3$ were found to be \textbf{1.33A{\normalfont,} 1.33A{\normalfont, and} 2.67A} respectively. These results found using PSPICE \textit{DC} bias point current simulation were compared to manual circuit analysis shown in Appendix \ref{SecondAppendix}. This comparison showed the same current values for the PSPICE simulation and manual circuit analysis.
 
 \subsection*{Exercise 3}
-The circuit schematic of this exercise given in figure \ref{fig:circuit3} consisted of four resistors \textit{R}, a voltage-controlled voltage source \textit{(VCVS)} from the \textit{Analog} library and and independent \textit{DC} current source. A gain of 2 was given to the voltage-controlled voltage source and was configured to be controlled by the voltage across a resistor. The schematic created in PSPICE can be seen in figure \ref{fig:circuit6}.
+The circuit schematic of this exercise given in figure \ref{fig:circuit3} consisted of four resistors \textit{R}, a voltage-controlled voltage source \textit{(VCVS)} from the \textit{Analog} library, and an independent \textit{DC} current source. A gain of 2 was given to the voltage-controlled voltage source and was configured to be controlled by the voltage across a resistor. The schematic created in PSPICE can be seen in figure \ref{fig:circuit6}.
 
 \begin{figure}[h]
     \caption{Exercise 3 circuit schematic}
@@ -115,7 +115,7 @@ In this laboratory, we got introduced to circuit simulation and analysis in PSPI
 
 \clearpage
 \appendix
-\subsection{Exercise 1}
+\subsection{}
 \label{FirstAppendix}
 
 \begin{figure}[h]
@@ -134,18 +134,18 @@ In this laboratory, we got introduced to circuit simulation and analysis in PSPI
     \frac{V2 - V3}{10} = \frac{V3}{40} - 3
 \end{equation}
 
-\noindent from (2) we can write:
+\noindent From (2) we can write:
 \begin{equation}
     V2 = \frac{5\times V3}{4} - 30
 \end{equation}
 
-\noindent substuting $V2$ by (3) in (1) we obtain:\\
+\noindent Substituting $V2$ by (3) in (1) we obtain:\\
 \bigskip
 $7.75\times V3 = 690 \Rightarrow V3 = \textbf{89.03V}$\\
-using (3) we find V2:\\
+Using (3) we find V2:\\
 $V2 = \textbf{81.29V}$
 
-\subsection{Exercise 2}
+\subsection{}
 \label{SecondAppendix}
 
 \begin{figure}[h]
@@ -178,6 +178,52 @@ $V_c = 10.67V$
 \noindent $I_1 = \frac{V_a}{2} = \textbf{1.33A}$,
 $I_2 = \frac{V_c}{8} = \textbf{1.33A}$,
 $I_3 = \frac{V_c}{4} = \textbf{2.67}$\\
-\subsection{Exercise 3}
+
+
+\subsection{}
 \label{ThirdAppendix}
+
+
+
+\begin{figure}[h]
+    \caption{exercise 3 short circuit current calculation}
+    \includegraphics[scale=0.39]{ex3_2}
+    \label{fig:circuit9}
+\end{figure}
+
+\[V_a = V_x\]
+\begin{equation}
+    V_b = V_a + 2V_x \Rightarrow V_b = 3V_a
+\end{equation}
+
+\begin{equation}
+    \frac{V_a}{4} + \frac{V_b}{6} + \frac{V_b}{2} = 5
+\end{equation}
+\noindent From (6) and (7), we find:
+$V_a = 2.22V$ and $V_b = 6.67V$
+\noindent Therefore:
+\[I_{sc} = \frac{V_b}{2} = \textbf{3.33A}\]
+
+
+\begin{figure}[h]
+    \caption{exercise 3 Open circuit voltage calculation}
+    \includegraphics[scale=0.39]{ex3_1}
+    \label{fig:circuit10}
+
+\end{figure}
+
+\begin{equation}
+    V_b = V_a + 2V_a = 3V_a
+\end{equation}
+\begin{equation}
+    5 = \frac{V_a}{4} + \frac{V_b}{6}
+\end{equation}
+\bigskip
+\\
+\noindent From (8) and (9) we find $V_a = 6.67V$ and $V_b = V_{oc} = V_{th} = \textbf{20V}$
+\bigskip\\
+$V_{th} = \textbf{20}V$\\
+$I_{sc} = \textbf{3.33}A$\\
+$R_{th} = \frac{V_{th}}{I_{sc}} = \textbf{6}\Omega$
+
 \end{document}
