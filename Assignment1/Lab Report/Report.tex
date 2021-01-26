@@ -37,7 +37,7 @@
 This experiment required using PSPICE to find the voltage values at the three nodes (\textit{1, 2,} and \textit{3}) in the given circuit. The given circuit is shown in figure \ref{fig:circuit1}.
 \begin{figure}[h]
     \caption{Exercise circuit}
-    \includegraphics[scale=0.30]{ex1}
+    \includegraphics[scale=0.28]{ex1}
     \label{fig:circuit1}
 \end{figure}
 
@@ -80,26 +80,26 @@ We then simulated the schematic using \textit{DC} bias point current simulation 
 
 \begin{figure}[h]
     \caption{Exercise 2 circuit schematic and simulation results}
-    \includegraphics[scale=0.5]{circuit2}
+    \includegraphics[scale=0.46]{circuit2}
     \label{fig:circuit5}
 \end{figure}
 
 As shown in figure \ref{fig:circuit5}, the currents $i_1$, $i_2$, and $i_3$ were found to be \textbf{1.33A{\normalfont,} 1.33A{\normalfont, and} 2.67A} respectively. This results, found using PSPICE \textit{DC} bias point current simulation were compared to manual circuit analysis shown in Appendix \ref{SecondAppendix}. This comparison showed same current values for the PSPICE simulation and manual circuit analysis.
 
 \subsection*{Exercise 3}
-The circuit schematic of this exercise given in figure \ref{fig:circuit3} consisted of four resistors \textit{R}, a voltage-controlled voltage source \textit{(VCVS)} from the \textit{Analog} library and and independent \textit{DC} current source. The schematic created in PSPICE can be seen in figure \ref{fig:circuit6}.
+The circuit schematic of this exercise given in figure \ref{fig:circuit3} consisted of four resistors \textit{R}, a voltage-controlled voltage source \textit{(VCVS)} from the \textit{Analog} library and and independent \textit{DC} current source. A gain of 2 was given to the voltage-controlled voltage source and was configured to be controlled by the voltage across a resistor. The schematic created in PSPICE can be seen in figure \ref{fig:circuit6}.
 
 \begin{figure}[h]
     \caption{Exercise 3 circuit schematic}
     \includegraphics[scale=0.67]{circuit3}
     \label{fig:circuit6}
 \end{figure}
-The goal of the exercise being to find the Thevenin/Norton equivalent of the circuit given in figure \ref{fig:circuit3}, $R_{th}$, $V_{th}$, and $I_N$ had to be found. For this reason, we connected a test source($0 A$) between terminal $a$ and $b$ of the circuit in figure \ref{fig:circuit3} as shown in figure \ref{fig:circuit6}. Unlike previous exercises, we performed a \textit{DC} sweep simulation with the test source ($I_2$) as the source with a current going from $0A$ to $1A$ in increments of $0.1A$.\\
+The goal of the exercise being to find the Thevenin/Norton equivalent of the circuit given in figure \ref{fig:circuit3}, $R_{th}$, $V_{th}$, and $I_N$ had to be found. For this reason, we connected a test source ($0 A$) between terminal $a$ and $b$ of the circuit in figure \ref{fig:circuit3} as shown in figure \ref{fig:circuit6}. Unlike previous exercises, we performed a \textit{DC} sweep simulation with the test source ($I_2$) as the source with a current going from $0A$ to $1A$ in increments of $0.1A$.\\
 A voltage marker was then placed  in the position seen in figure \ref{fig:circuit6} and the $I-V$ graph across the test source $I_2$ was obtained and is shown in figure \ref{fig:graph}.
 
 \begin{figure}[h]
     \caption{Exercise 3 $I-V$ graph across the test source $I_2$}
-    \includegraphics[scale=0.45]{plot}
+    \includegraphics[scale=0.43]{plot}
     \label{fig:graph}
 \end{figure}
 
@@ -111,16 +111,73 @@ From figure \ref{fig:graph}, we can see a voltage of $20V$ across the test sourc
 
 Manual circuit analysis that can be found in Appendix \ref{ThirdAppendix} show the same results as those obtained by \textit{DC} sweep analysis across a test source.
 \section{Conclusion}
-
+In this laboratory, we got introduced to circuit simulation and analysis in PSPICE with three different exercises. We got introduced to libraries containing electrical components, creating circuit schematic, and two DC analysis methods in PSPICE. The two first exercises required DC bias point simulation, while the third exercise was solved using DC sweep simulation. For each exercise, we compared the results of our PSPICE simulation with results obtained manually. PSPICE results were identical to those obtained manually in all three exercises. However, PSPICE simulations were less prone to human error, and obtaining the final results took significantly less time.
 
 \clearpage
 \appendix
 \subsection{Exercise 1}
 \label{FirstAppendix}
 
+\begin{figure}[h]
+    \caption{Exercise 1 circuit}
+    \includegraphics[scale=0.28]{ex1}
+    \label{fig:circuit7}
+\end{figure}
+
+\noindent We can identify that $V1 = \textbf{120V}$. We use KCL to find $V1$, $V2$, and $V3$ as follows:\\
+
+\begin{equation}
+    \frac{120 - V2}{20} = \frac{V2}{30} + \frac{V2 - V3}{10}
+\end{equation}
+
+\begin{equation}
+    \frac{V2 - V3}{10} = \frac{V3}{40} - 3
+\end{equation}
+
+\noindent from (2) we can write:
+\begin{equation}
+    V2 = \frac{5\times V3}{4} - 30
+\end{equation}
+
+\noindent substuting $V2$ by (3) in (1) we obtain:\\
+\bigskip
+$7.75\times V3 = 690 \Rightarrow V3 = \textbf{89.03V}$\\
+using (3) we find V2:\\
+$V2 = \textbf{81.29V}$
+
 \subsection{Exercise 2}
 \label{SecondAppendix}
 
+\begin{figure}[h]
+    \caption{Exercise 2 circuit}
+    \includegraphics[scale=0.39]{ex2_edited}
+    \label{fig:circuit8}
+\end{figure}
+
+\noindent    $v_o = V_c$\\
+$V_c = V_b + 3v_o \Rightarrow V_c = -0.5V_b$\\
+
+\begin{equation}
+    \frac{24 - V_a}{4} = \frac{V_a - V_c}{1} + \frac{V_a - V_b}{2} + \frac{V_a}{2}
+\end{equation}
+
+\begin{equation}
+    \frac{V_a - V_b}{2} + \frac{V_a - V_c}{1} = \frac{V_c}{8} + \frac{V_c}{4}
+\end{equation}
+
+\bigskip
+\noindent We find the following voltage values: \\
+
+\noindent$V_a = 2.67V$,
+$V_b = -21.33V$,
+$V_c = 10.67V$
+
+\bigskip
+\noindent Using ohm's law we find:\\
+
+\noindent $I_1 = \frac{V_a}{2} = \textbf{1.33A}$,
+$I_2 = \frac{V_c}{8} = \textbf{1.33A}$,
+$I_3 = \frac{V_c}{4} = \textbf{2.67}$\\
 \subsection{Exercise 3}
 \label{ThirdAppendix}
 \end{document}
