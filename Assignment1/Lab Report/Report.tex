@@ -33,7 +33,7 @@
 
 \section{Introduction}
 
-\subsection*{Experiment 1}
+\subsection*{Exercise 1}
 This experiment required using PSPICE to find the voltage values at the three nodes (\textit{1, 2,} and \textit{3}) in the given circuit. The given circuit is shown in figure \ref{fig:circuit1}.
 \begin{figure}[h]
     \caption{Exercise circuit}
@@ -41,7 +41,7 @@ This experiment required using PSPICE to find the voltage values at the three no
     \label{fig:circuit1}
 \end{figure}
 
-\subsection*{Experiment 2}
+\subsection*{Exercise 2}
 This experiment required using PSPICE to find the current values in three branches ($i_1$, $i_2$, and $i_3$). The given circuit is shown in figure \ref{fig:circuit2}.
 \begin{figure}[h]
     \caption{Exercise circuit}
@@ -49,7 +49,7 @@ This experiment required using PSPICE to find the current values in three branch
     \label{fig:circuit2}
 \end{figure}
 
-\subsection*{Experiment 3}
+\subsection*{Exercise 3}
 This experiment required using PSPICE to find the Thevenin/Norton equivalent of a given circuit. The given circuit is shown in figure \ref{fig:circuit3}.
 \begin{figure}[h]
     \caption{Exercise circuit}
@@ -59,9 +59,9 @@ This experiment required using PSPICE to find the Thevenin/Norton equivalent of 
 \end{figure}
 
 
-\section{Experiments}
+\section{Exercises}
 
-\subsection*{Experiment 1}
+\subsection*{Exercise 1}
 We first created a schematic of the circuit given in figure \ref{fig:circuit1}. Drawing the schematic of the circuit required the use of four resistors $R$ from the \textit{Analog} library, a \textit{DC} independent voltage source, a \textit{DC} independent current source from the \textit{Source} library, wires, and a ground as can be seen in figure \ref{fig:circuit4}.\\
 Once the circuit schematic was completed, we performed a \textit{DC} analysis using \textit{DC} bias point simulation in PSPICE to find the voltages at the given nodes. DC bias point voltage simulation results can be seen in figure \ref{fig:circuit4}.
 \begin{figure}[h]
@@ -71,7 +71,7 @@ Once the circuit schematic was completed, we performed a \textit{DC} analysis us
 
 \end{figure}
 
-As figure \ref{fig:circuit4} indicates, the voltage values at nodes \textit{1{\normalfont ,} 2{\normalfont, and} 3} were found to be \textit{\textbf{120V{\normalfont ,} 81.29V{\normalfont , and} 89.03V}} respectively. \\
+As figure \ref{fig:circuit4} indicates, the voltage values at nodes \textit{1{\normalfont ,} 2{\normalfont, and} 3} were found to be \textbf{120V{\normalfont ,} 81.29V{\normalfont , and} 89.03V} respectively. \\
 Results found using PSPICE DC bias point voltage analysis were then verified by manual circuit analysis. The voltage values at the three nodes found by manual circuit analysis shown in Appendix \ref{FirstAppendix} are consistent with values found from the PSPICE simulation.
 
 \subsection*{Exercise 2}
@@ -87,19 +87,40 @@ We then simulated the schematic using \textit{DC} bias point current simulation 
 As shown in figure \ref{fig:circuit5}, the currents $i_1$, $i_2$, and $i_3$ were found to be \textbf{1.33A{\normalfont,} 1.33A{\normalfont, and} 2.67A} respectively. This results, found using PSPICE \textit{DC} bias point current simulation were compared to manual circuit analysis shown in Appendix \ref{SecondAppendix}. This comparison showed same current values for the PSPICE simulation and manual circuit analysis.
 
 \subsection*{Exercise 3}
+The circuit schematic of this exercise given in figure \ref{fig:circuit3} consisted of four resistors \textit{R}, a voltage-controlled voltage source \textit{(VCVS)} from the \textit{Analog} library and and independent \textit{DC} current source. The schematic created in PSPICE can be seen in figure \ref{fig:circuit6}.
 
+\begin{figure}[h]
+    \caption{Exercise 3 circuit schematic}
+    \includegraphics[scale=0.67]{circuit3}
+    \label{fig:circuit6}
+\end{figure}
+The goal of the exercise being to find the Thevenin/Norton equivalent of the circuit given in figure \ref{fig:circuit3}, $R_{th}$, $V_{th}$, and $I_N$ had to be found. For this reason, we connected a test source($0 A$) between terminal $a$ and $b$ of the circuit in figure \ref{fig:circuit3} as shown in figure \ref{fig:circuit6}. Unlike previous exercises, we performed a \textit{DC} sweep simulation with the test source ($I_2$) as the source with a current going from $0A$ to $1A$ in increments of $0.1A$.\\
+A voltage marker was then placed  in the position seen in figure \ref{fig:circuit6} and the $I-V$ graph across the test source $I_2$ was obtained and is shown in figure \ref{fig:graph}.
 
+\begin{figure}[h]
+    \caption{Exercise 3 $I-V$ graph across the test source $I_2$}
+    \includegraphics[scale=0.45]{plot}
+    \label{fig:graph}
+\end{figure}
+
+From figure \ref{fig:graph}, we can see a voltage of $20V$ across the test source at $0A$, from which we can conclude that $V_{th}$ = \textbf{20V}. We also find $R_{th}$ from the slope of the graph in figure \ref{fig:graph}. The current $I_N$ can also be calculated using ohm's law.
+
+\[V_{th} = \textbf{20V}\]
+\[R_{th} = \frac{26 - 20}{1 - 0} = \textbf{6}\Omega\]
+\[I_{N} = \frac{V_{th}}{R_{th}} = \frac{20}{6} = \textbf{3.33A}\]
+
+Manual circuit analysis that can be found in Appendix \ref{ThirdAppendix} show the same results as those obtained by \textit{DC} sweep analysis across a test source.
 \section{Conclusion}
-\blindtext
+
 
 \clearpage
 \appendix
-\subsection*{Exercise 1}
+\subsection{Exercise 1}
 \label{FirstAppendix}
 
-\subsection*{Exercise 2}
+\subsection{Exercise 2}
 \label{SecondAppendix}
 
-\subsection*{Exercise 3}
+\subsection{Exercise 3}
 \label{ThirdAppendix}
 \end{document}

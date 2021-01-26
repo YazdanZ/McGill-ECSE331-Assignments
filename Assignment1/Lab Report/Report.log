@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=latex 2021.1.23)  25 JAN 2021 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=latex 2021.1.23)  25 JAN 2021 18:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -195,7 +195,140 @@ LaTeX Font Info:    ... okay on input line 7.
 
 ]
 
+LaTeX Warning: Reference `fig:circuit1' on page 2 undefined on input line 37.
+
+
 ! LaTeX Error: File `ex1' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return> 
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40     \includegraphics[scale=0.30]{ex1}
+                                          
+? ^^[^^[qq
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 45.
+
+LaTeX Warning: Reference `fig:circuit2' on page 2 undefined on input line 45.
+
+
+! LaTeX Error: File `ex2' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48     \includegraphics[scale=0.39]{ex2}
+                                          
+? 
+
+LaTeX Warning: Reference `fig:circuit3' on page 2 undefined on input line 53.
+
+
+! LaTeX Error: File `ex3' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56     \includegraphics[scale=0.39]{ex3}
+                                          
+? 
+
+Underfull \hbox (badness 2707) in paragraph at lines 53--60
+[]\OT1/ptm/m/n/10 This ex-per-i-ment re-quired us-ing PSPICE to find the
+ []
+
+
+LaTeX Warning: Reference `fig:circuit1' on page 2 undefined on input line 65.
+
+
+LaTeX Warning: Reference `fig:circuit4' on page 2 undefined on input line 65.
+
+
+LaTeX Warning: Reference `fig:circuit4' on page 2 undefined on input line 66.
+
+
+! LaTeX Error: File `circuit1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69     \includegraphics[scale=0.65]{circuit1}
+                                               
+? 
+
+LaTeX Warning: Reference `fig:circuit4' on page 2 undefined on input line 74.
+
+
+LaTeX Warning: Reference `FirstAppendix' on page 2 undefined on input line 75.
+
+
+LaTeX Warning: Reference `fig:circuit2' on page 2 undefined on input line 78.
+
+
+LaTeX Warning: Reference `fig:circuit5' on page 2 undefined on input line 79.
+
+
+! LaTeX Error: File `circuit2' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.83     \includegraphics[scale=0.5]{circuit2}
+                                              
+? q
+OK, entering \batchmode...
+
+LaTeX Warning: Reference `fig:circuit5' on page 2 undefined on input line 87.
+
+
+LaTeX Warning: Reference `SecondAppendix' on page 2 undefined on input line 87.
+
+
+ [2
+
+]
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+ [3
+
+
+] (./Report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1823 strings out of 479384
+ 32522 string characters out of 5875856
+ 319279 words of memory out of 5000000
+ 18979 multiletter control sequences out of 15000+600000
+ 425653 words of font info for 69 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 66i,7n,72p,803b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on Report.dvi (3 pages, 7264 bytes).
