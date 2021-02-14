@@ -1,0 +1,126 @@
+
+**** 02/14/21 18:13:13 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIMA2-3"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\As
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "a2-3-SCHEMATIC1-SIMA2-3.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.1s 0 
+.PROBE 
+.INC "a2-3-SCHEMATIC1.net" 
+
+
+**** INCLUDING a2-3-SCHEMATIC1.net ****
+* source A2-3
+K_TX1         L1_TX1 L2_TX1 1
+L1_TX1         N000030 0 100uH
+L2_TX1        N00063 0 1uH
+V_V1         N00009 0  
++SIN 0 220 50 0 0 0
+R_R2         N00009 N000030  1m  
+R_R1         N00078 N00072  1k  
+D_D1         N00063 N00078 D1N914 
+D_D2         0 N00078 D1N914 
+D_D3         N00072 N00063 D1N914 
+D_D4         N00072 0 D1N914 
+C_C1         N00078 N00072  10m  
+
+**** RESUMING a2-3-SCHEMATIC1-SIMA2-3.sim.cir ****
+.INC "a2-3-SCHEMATIC1.als"
+
+
+
+**** INCLUDING a2-3-SCHEMATIC1.als ****
+.ALIASES
+K_TX1           TX1()
+L1_TX1           TX1(1=N000030 2=0 )
+L2_TX1          TX1(3=N00063 4=0 )
+V_V1            V1(+=N00009 -=0 )
+R_R2            R2(1=N00009 2=N000030 )
+R_R1            R1(1=N00078 2=N00072 )
+D_D1            D1(1=N00063 2=N00078 )
+D_D2            D2(1=0 2=N00078 )
+D_D3            D3(1=N00072 2=N00063 )
+D_D4            D4(1=N00072 2=0 )
+C_C1            C1(1=N00078 2=N00072 )
+.ENDALIASES
+
+**** RESUMING a2-3-SCHEMATIC1-SIMA2-3.sim.cir ****
+.END
+
+**** 02/14/21 18:13:13 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIMA2-3"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\As
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N914          
+          IS  168.100000E-21 
+         ISR  100.000000E-12 
+          BV  100            
+         IBV  100.000000E-06 
+          RS     .1          
+          TT   11.540000E-09 
+         CJO    4.000000E-12 
+          VJ     .75         
+           M     .3333       
+
+
+**** 02/14/21 18:13:13 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIMA2-3"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\As
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00009)    0.0000 (N00063)    0.0000 (N00072) 806.9E-21 (N00078) 806.9E-21     
+
+(N000030)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

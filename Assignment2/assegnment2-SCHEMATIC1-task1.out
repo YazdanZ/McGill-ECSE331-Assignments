@@ -1,0 +1,137 @@
+
+**** 02/14/21 17:07:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-task1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assi
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "assegnment2-SCHEMATIC1-task1.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 0 2 0.01 
+.TEMP 50 100 150
+.PROBE 
+.INC "assegnment2-SCHEMATIC1.net" 
+
+
+**** INCLUDING assegnment2-SCHEMATIC1.net ****
+* source ASSEGNMENT2
+D_D1         N00015 0 D1N914 
+R_R1         N00011 N00015  1k  
+V_V1         N00011 0 0Vdc
+
+**** RESUMING assegnment2-SCHEMATIC1-task1.sim.cir ****
+.INC "assegnment2-SCHEMATIC1.als"
+
+
+
+**** INCLUDING assegnment2-SCHEMATIC1.als ****
+.ALIASES
+D_D1            D1(1=N00015 2=0 )
+R_R1            R1(1=N00011 2=N00015 )
+V_V1            V1(+=N00011 -=0 )
+.ENDALIASES
+
+**** RESUMING assegnment2-SCHEMATIC1-task1.sim.cir ****
+.END
+
+**** 02/14/21 17:07:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-task1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assi
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N914          
+          IS  168.100000E-21 
+         ISR  100.000000E-12 
+          BV  100            
+         IBV  100.000000E-06 
+          RS     .1          
+          TT   11.540000E-09 
+         CJO    4.000000E-12 
+          VJ     .75         
+           M     .3333       
+
+
+**** 02/14/21 17:07:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-task1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assi
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ D1N914     4.450E-18  7.095E-01  4.084E-12  1.000E-01  0.000E+00  1.000E+02
+
+**** 02/14/21 17:07:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-task1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assi
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ D1N914     1.430E-15  6.191E-01  4.272E-12  1.000E-01  0.000E+00  1.000E+02
+
+**** 02/14/21 17:07:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-task1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assi
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  150.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ D1N914     1.233E-13  5.256E-01  4.464E-12  1.000E-01  0.000E+00  1.000E+02
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

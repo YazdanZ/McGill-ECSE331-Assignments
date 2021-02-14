@@ -1,0 +1,20 @@
+** Profile: "SCHEMATIC1-task1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assignments\Assignment2\assegnment2-SCHEMATIC1-task1.sim ] 
+
+** Creating circuit file "assegnment2-SCHEMATIC1-task1.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 0 2 0.01 
+.TEMP 50 100 150
+.PROBE 
+.INC "assegnment2-SCHEMATIC1.net" 
+
+.INC "assegnment2-SCHEMATIC1.als"
+
+
+.END
