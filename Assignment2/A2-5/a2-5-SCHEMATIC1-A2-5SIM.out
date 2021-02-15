@@ -1,0 +1,118 @@
+
+**** 02/14/21 18:47:49 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-A2-5SIM"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\As
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "a2-5-SCHEMATIC1-A2-5SIM.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100ms 0 
+.PROBE 
+.INC "a2-5-SCHEMATIC1.net" 
+
+
+**** INCLUDING a2-5-SCHEMATIC1.net ****
+* source A2-5
+D_D1         N00023 N00069 D1N4002 
+D_D2         0 N00091 D1N4002 
+V_vin         N00017 0  
++SIN 0 16 60 0 0 0
+R_R1         N00017 N00023  1k  
+V_V1         N00069 0 8.3Vdc
+V_V2         N00091 N00023 4.3Vdc
+
+**** RESUMING a2-5-SCHEMATIC1-A2-5SIM.sim.cir ****
+.INC "a2-5-SCHEMATIC1.als"
+
+
+
+**** INCLUDING a2-5-SCHEMATIC1.als ****
+.ALIASES
+D_D1            D1(1=N00023 2=N00069 )
+D_D2            D2(1=0 2=N00091 )
+V_vin           vin(+=N00017 -=0 )
+R_R1            R1(1=N00017 2=N00023 )
+V_V1            V1(+=N00069 -=0 )
+V_V2            V2(+=N00091 -=N00023 )
+.ENDALIASES
+
+**** RESUMING a2-5-SCHEMATIC1-A2-5SIM.sim.cir ****
+.END
+
+**** 02/14/21 18:47:49 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-A2-5SIM"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\As
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 02/14/21 18:47:49 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-A2-5SIM"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\As
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00017)    0.0000 (N00023) 36.90E-09 (N00069)    8.3000 (N00091)    4.3000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_vin        3.690E-11
+    V_V1        -1.435E-08
+    V_V2        -1.431E-08
+
+    TOTAL POWER DISSIPATION   1.81E-07  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

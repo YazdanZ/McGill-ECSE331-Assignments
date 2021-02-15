@@ -13,4 +13,15 @@
       (Sort User))
     (Folder "Include Files"
       (Sort User)))
-  (DefaultLibraryBrowseDirectory "library\PSpice"))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "PSpice Resources")
+      (Select "PSpice Resources" "Include Files"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 594"))
+      (Tab 0))))

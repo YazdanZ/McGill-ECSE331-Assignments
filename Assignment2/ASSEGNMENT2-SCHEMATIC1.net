@@ -1,4 +1,0 @@
-* source ASSEGNMENT2
-D_D1         N00015 0 D1N914 
-R_R1         N00011 N00015  1k  
-V_V1         N00011 0 0Vdc

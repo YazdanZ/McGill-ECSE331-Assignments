@@ -1,0 +1,19 @@
+** Profile: "SCHEMATIC1-A2-5SIM"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assignments\Assignment2\A2-2\A2-3\A2-5\a2-5-SCHEMATIC1-A2-5SIM.sim ] 
+
+** Creating circuit file "a2-5-SCHEMATIC1-A2-5SIM.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100ms 0 
+.PROBE 
+.INC "a2-5-SCHEMATIC1.net" 
+
+.INC "a2-5-SCHEMATIC1.als"
+
+
+.END
