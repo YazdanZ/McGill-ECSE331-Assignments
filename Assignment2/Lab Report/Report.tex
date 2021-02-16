@@ -134,7 +134,7 @@ A full-wave rectifier circuit produces an output voltage or current which is eit
 \begin{figure}[h]
     \caption{Full wave bridge rectifier circuit schematic}
     \centering
-    \includegraphics[scale=0.6]{Circuit3}
+    \includegraphics[scale=0.58]{Circuit3}
 \end{figure}
 
 Our main goal is to obtain the input and output voltages of the full-wave bridge rectifier. For this reason, we place a voltage probe at the AC source and two voltage probes to find the voltage drop across the resistor R1. We perform a time-domain (transient) simulation of 100 ms.
@@ -143,14 +143,14 @@ As mentioned before, the V1 has an amplitude of 220V with a frequency of 50Hz. T
 \begin{figure}[h]
     \caption{V1 versus time}
     \centering
-    \includegraphics[scale=0.43]{Simulation3-1}
+    \includegraphics[scale=0.44]{Simulation3-1}
 \end{figure}
 
 The plot of the output voltage (the voltage across the resistor R1) versus time was is obtained and shown in Figure 10. From Figure 10, we can see a full-wave rectification where the voltage oscillates between 0 and 20V. By simple circuit analysis, this rectification can be explained by the fact that during the positive half cycle of the supply, diodes D1 and D4 conduct in series conduct is series but diodes D2 and D3 are off as they are reverse biased. However, during the negative half cycle, diodes D2 and D3 conduct in series while diodes D1 and D4 switch off due to being in reverse bias. So the current flow through R1 will be in the same directions.
 \begin{figure}[h]
     \caption{Voltage across R1 versus time}
     \centering
-    \includegraphics[scale=0.40]{Simulation3-2}
+    \includegraphics[scale=0.43]{Simulation3-2}
 \end{figure}
 
 To better visualize the full wave rectification, Figure 11 shows V1 and the voltage across R1 versus time in a superposed manner.
@@ -158,7 +158,7 @@ To better visualize the full wave rectification, Figure 11 shows V1 and the volt
 \begin{figure}[h]
     \caption{Voltage across R1 and v1 versus time}
     \centering
-    \includegraphics[scale=0.40]{Simulation3-0}
+    \includegraphics[scale=0.43]{Simulation3-0}
 \end{figure}
 
 \subsection*{Task 4}
@@ -177,17 +177,17 @@ We simulate the schematic shown in Figure 12, under the same settings and condit
 \begin{figure}[!h]
     \caption{Voltage across R1 vs time  with $C = 10\mu F$}
     \centering
-    \includegraphics[scale=0.45]{Simulation4-0}
+    \includegraphics[scale=0.43]{Simulation4-0}
 \end{figure}
 \begin{figure}[!h]
     \caption{Voltage across R1 vs time  with $C = 100\mu F$}
     \centering
-    \includegraphics[scale=0.45]{Simulation4-100u}
+    \includegraphics[scale=0.43]{Simulation4-100u}
 \end{figure}
 \begin{figure}[!h]
     \caption{Voltage across R1 vs time with $C = 1 mF$}
     \centering
-    \includegraphics[scale=0.45]{Simulation4-1m}
+    \includegraphics[scale=0.43]{Simulation4-1m}
 \end{figure}
 
 We can conclude from Figures 13, 14, and 15 that increasing the capacitance of the capacitor C1 reduces the ripple. With $C=1mF$, we have converted the ripple voltage into a smoother signal of 20V DC.
@@ -195,7 +195,52 @@ We can conclude from Figures 13, 14, and 15 that increasing the capacitance of t
 This smoothing can be explained by the fact that with a large enough capacitor ($1mF$ in our case) when the ripple voltage rises, reactive power is stored in the capacitor. When the ripple voltage falls, reactive power is discharged from the capacitor raising the voltage. This also explains the reason why smaller capacitors did not fully remove the ripple voltage.
 
 \subsection*{Task 5}
-\subsection*{Task 6}
-\section{Conclusion}
+A clipper is a circuit designed to block a signal from exceeding a certain reference voltage level without distorting the remainings of the signal. In this exercise, we build a dual diode clipper that combines a parallel negative clipper with a negative bias with a positive clipper with a positive bias. This configuration, shown in Figure 3, allows us to clip at both ends of the signal.
 
+We build the Figure 3 circuit using an AC power source with an amplitude of 16 and a frequency of 60Hz, one resistor, two DC voltage sources, and two D1N4002 diodes as shown in Figure 16.
+\begin{figure}[!h]
+    \caption{Clipper circuit schematic}
+    \centering
+    \includegraphics[scale=0.63]{Circuit5}
+\end{figure}
+
+To find the voltages for the two independent voltage sources V1 and V2, we first need to find the cut-off voltage of the D1N4002 diode similar to what we did in task 1 for the D1N914 diode. So we plot the current going through the diode against the voltage across the diode. In our simulation, we use a voltage step of 0.01V. The I-V plot found for the D1N4002 diode is shown in Figure 17. We can infer the cut-off voltage to be approximately equal to 0.67V from Figure 17 as the current increases significantly past that voltage.
+\begin{figure}[!h]
+    \caption{I-V plot of the D1N4002 diode}
+    \centering
+    \includegraphics[scale=0.41]{Simulation5-0}
+\end{figure}
+
+Knowing the cut-off voltage of the diode, we can conduct our analysis to find the voltages V1 and V2 of the two independent DC sources such that the clipper meets the design requirements mentioned previously. We can solve this circuit by conducting the constant voltage drop model. The two diodes can both be off or on or one diode can be on while the other is off. Four cases are as follows:
+
+\begin{enumerate}
+    \item When both D1 and D2 are on, we get contradictory results
+    \item D1 and D2 are both off
+        \[\Rightarrow V_{in} = V{out}\]
+    \item D2 is off and D1 is on
+        \[\Rightarrow V1 = V_{max-out} - V_{D1}= 9 - 0.7 = 8.3 V\]
+    \item D1 is off and D2 is on
+        \[\Rightarrow V2 = V_{min-out} + V_{D2} = -5 + 0.7 = -4.3 V\]
+\end{enumerate}
+
+For simplification, we rounded $V_{D}$ up to 0.7V. From the above equations, we find that V1=8.3V and V2=-4.3V.
+
+To verify our choices of voltage sources V1 and V2, we perform a simulation to plot $V{in}$ vs $V{out}$. The result of this simulation is shown in Figure 18. We can see that our design specifications have been correctly met.
+\begin{figure}[!h]
+    \caption{$V_{in}$ vs $V_{out}$ of the clipper circuit}
+    \centering
+    \includegraphics[scale=0.235]{Simulation5-2}
+\end{figure}
+
+Additionally, we can check the output voltage versus time by carrying a time-domain simulation over 100ms. The result of this simulation is shown in Figure 19. We can see that with values found for V1 and V2, the voltage stays between -5V and 9V. Moreover, we can see that the voltage gets clipped outside the [-5V, 9V] bound.
+\begin{figure}[!h]
+    \caption{$V_{out}$ vs time}
+    \centering
+    \includegraphics[scale=0.435]{Simulation5-1}
+\end{figure}
+\subsection*{Task 6}
+
+\section{Conclusion}
+\blindtext
+\section{References}
 \end{document}
