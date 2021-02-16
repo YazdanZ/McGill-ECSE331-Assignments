@@ -239,8 +239,22 @@ Additionally, we can check the output voltage versus time by carrying a time-dom
     \includegraphics[scale=0.435]{Simulation5-1}
 \end{figure}
 \subsection*{Task 6}
+In this exercise, we design the circuit given in Figure 4 using the D1N750 Zener diode. The circuit schematic created in SPICE can be seen in Figure 20.
+\begin{figure}[!h]
+    \caption{Task 6 circuit schematic}
+    \centering
+    \includegraphics[scale=0.9]{Circuit6}
+\end{figure}
 
+We place a voltage and current probe to find the current through the diode and the voltage across it. We then perform a sweep simulation to plot the current through the Zener diode against the voltage across it. The resulting plot, from this simulation, is shown in Figure 21.
+\begin{figure}[!h]
+    \caption{Current through the Zener diode vs the voltage across it}
+    \centering
+    \includegraphics[scale=0.43]{Simulation6}
+\end{figure}
+
+From this Figure 21 plot, we can find that the voltage at which Zener breakdown occurs is about 4.5V and the voltage at which the diode starts to conduct in forward bias is close to -0.65V.
 \section{Conclusion}
-\blindtext
-\section{References}
+To conclude, in this laboratory, we performed a series of simulations and analyses on diodes and used them to construct circuits with noteworthy applications. We analyzed the characteristics of the D1N914 diode and the D1N750 Zener diode. We performed studies on the effect of temperature on diode characteristics. We then focused on leveraging studied diode characteristics to construct a full wave bridge rectifier, to which we then added a capacitor to achieve smoothing. Finally, we designed, simulated, and analyzed a dual diode clipper circuit.
+
 \end{document}
