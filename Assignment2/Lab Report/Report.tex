@@ -1,6 +1,7 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 \usepackage{blindtext}
+\usepackage{amsmath}
 \usepackage{gensymb}
 \usepackage{graphicx}
 \graphicspath{ {./images/}  }
@@ -76,13 +77,125 @@ This simulation is then followed by a theoretical discussion.
     \includegraphics[scale=0.33]{fig3}
 \end{figure}
 \subsection*{Task 6}
+In this experiment, we construct the circuit shown in Figure 4. We plot the variation of current across the Zener diode with respect to the variation of voltage to find the voltage at which the Zener breakdown occurs and the voltage at which the diode starts to conduct in the forward bias region.
 \begin{figure}[h]
     \caption{Zener diode circuit}
     \centering
     \includegraphics[scale=0.3]{fig4}
 \end{figure}
-In this experiment, we construct the circuit shown in Figure 4. We plot the variation of current across the Zener diode with respect to the variation of voltage to find the voltage at which the Zener breakdown occurs and the voltage at which the diode starts to conduct in the forward bias region.
 
 \section{Solutions}
-\blindtext
+\subsection*{Task 1}
+We first construct the circuit showed in Figure 1 using an independent DC voltage source, a resistor, and a D1N914 diode. Our PSIPCE schematic for this circuit is shown in Figure 5. Once the schematic is made, we perform a DC sweep simulation on the circuit. We sweep the value of the voltage source V1 from -2V to 2V. We place a current and a voltage probe in positions shown in Figure 5, allowing us to plot the I-V curve of the diode. We then plot the current across the diode D1 and set the x-axis of the plot as the voltage across the diode.
+
+\begin{figure}[h]
+    \caption{Task 1 circuit schematic}
+    \centering
+    \includegraphics[scale=0.8]{Circuit1}
+\end{figure}
+
+The variation of current through the diode with respect to the voltage across it can be seen from the I-V plot shown in Figure 6.
+
+\begin{figure}[h]
+    \caption{D1 diode I-V plot}
+    \centering
+    \includegraphics[scale=0.5]{Simulation1}
+\end{figure}
+The cut-in voltage is found from the voltage at which the diode starts to conduct (has a positive current). This voltage is at 0.5V. We find the cut-off voltage to be approximately 0.85V when the diode, is fully conducting but remains at an approximately constant voltage. Therefore, $V_{cut-in} \approx 0.5V$ and $V_{cut-off} \approx 0.85V$.
+\subsection*{Task 2}
+Using the circuit schematic previously build and explained in Figure 5, we run a simulation to obtain the I-V plot of the diode at three different temperatures: 50 \degree C, 100 \degree C, and 150 \degree C. We perform this simulation by simply adding a temperature sweep for each of the mentioned temperatures to our simulation profile.
+
+The superposed I-V plot (current through the diode with respect to the voltage across the diode) for each of the three temperatures can be seen in Figure 7.
+\begin{figure}[h]
+    \caption{D1 diode I-V plot at 50 \degree C, 100 \degree C, and 150 \degree C}
+    \centering
+    \includegraphics[scale=0.55]{Simulation2}
+\end{figure}
+
+We can see that the I-V plot of the diode changes with temperature from Figure 7. We observe that both the cut-off and cut-in voltages decrease as temperature rises.
+PN junction diodes parameters such as the cut-in and cut-off voltage, the reverse breakdown, and barrier voltage are all highly dependant on the temperature.
+
+The diode current is given using the Shockley equation given bellow.
+\begin{equation}
+    I = I_S (e^{\frac{V_D}{nV_T} - 1})
+\end{equation}
+\begin{equation}
+    V_T = \frac{kT}{q}
+\end{equation}
+where $I$ is the diode current,\\
+$I_S$ is the reverse saturation current,\\
+$V_D$ is the voltage across the diode,\\
+$V_T$ is the thermal voltage, \\
+$n$ is the ideal factor\\
+
+Therefore, according to the Shockley diode equation, we conclude that the current should decrease with an increase in temperature. However, according to our observations from Figure 7, the exact opposite happens. This can be explained by the fact that with the rise of temperature, more electron-hole pairs are created resulting in higher conductivity and reverse saturation current. The reverse saturation current $I_S$ of a silicon diode increase by 7\%/\degree C. Therefore, a decrease in the cut-in and cut-off voltage with the rise of temperature. Reverse breakdown voltage (VR) also increases as we increase the temperature.
+\subsection*{Task 3}
+A full-wave rectifier circuit produces an output voltage or current which is either completely DC or has some particularized DC component. In this exercise, we build and simulate a full-wave bridge rectifier. In our design of this single-phase rectifier, we use four D1N914 rectifying diodes connected in a closed-loop bridge. Additionally, the circuit is comprised of two resistors, an AC source with an amplitude of 220V and a frequency of 50Hz, and a transformer with the coupling set to 1, $L1_{value} = 100\mu H$ and $L2_{value} = 1\mu H$. The schematic of our design can be seen in Figure 8.\\
+\begin{figure}[h]
+    \caption{Full wave bridge rectifier circuit schematic}
+    \centering
+    \includegraphics[scale=0.6]{Circuit3}
+\end{figure}
+
+Our main goal is to obtain the input and output voltages of the full-wave bridge rectifier. For this reason, we place a voltage probe at the AC source and two voltage probes to find the voltage drop across the resistor R1. We perform a time-domain (transient) simulation of 100 ms.
+
+As mentioned before, the V1 has an amplitude of 220V with a frequency of 50Hz. This can be confirmed from Figure 9 showing the obtained plot for the input voltage V1 versus time.
+\begin{figure}[h]
+    \caption{V1 versus time}
+    \centering
+    \includegraphics[scale=0.43]{Simulation3-1}
+\end{figure}
+
+The plot of the output voltage (the voltage across the resistor R1) versus time was is obtained and shown in Figure 10. From Figure 10, we can see a full-wave rectification where the voltage oscillates between 0 and 20V. By simple circuit analysis, this rectification can be explained by the fact that during the positive half cycle of the supply, diodes D1 and D4 conduct in series conduct is series but diodes D2 and D3 are off as they are reverse biased. However, during the negative half cycle, diodes D2 and D3 conduct in series while diodes D1 and D4 switch off due to being in reverse bias. So the current flow through R1 will be in the same directions.
+\begin{figure}[h]
+    \caption{Voltage across R1 versus time}
+    \centering
+    \includegraphics[scale=0.40]{Simulation3-2}
+\end{figure}
+
+To better visualize the full wave rectification, Figure 11 shows V1 and the voltage across R1 versus time in a superposed manner.
+
+\begin{figure}[h]
+    \caption{Voltage across R1 and v1 versus time}
+    \centering
+    \includegraphics[scale=0.40]{Simulation3-0}
+\end{figure}
+
+\subsection*{Task 4}
+As we had an AC input source (V1), the output of the full-wave bridge rectifier is a polarized, pulsating, and non-sinusoidal signal. It has $1/10^{th}$ the amplitude of the input signal with double the frequency of the input.
+
+\begin{figure}[!h]
+    \caption{Full wave bridge rectifier with smoothing}
+    \centering
+    \includegraphics[scale=0.48]{Circuit4}
+\end{figure}
+
+The output signal can be viewed as a DC voltage upon which a very large ripple voltage is superimposed. This output, found in task 4 is not very efficient as the ripple is dissipated as heat in DC components and causes noise in operations. To get a more suitable output signal, we have to convert all the ripple voltage, seen in Figure 10, into smoother and higher DC output. In this exercise, we add a capacitor in parallel to the resistor R1 in the circuit in Figure 8. The new circuit schematic is presented in Figure 12.
+
+We simulate the schematic shown in Figure 12, under the same settings and conditions as Task 3. We first set the value of the capacitor C1 to be $10\mu F$, we then increase the capacitance by setting it to $100\mu F$ and $1mF$, each time, plotting the voltage across R1 versus time. The resulting plots can be seen in Figures 13, 14, and 15.
+
+\begin{figure}[!h]
+    \caption{Voltage across R1 vs time  with $C = 10\mu F$}
+    \centering
+    \includegraphics[scale=0.45]{Simulation4-0}
+\end{figure}
+\begin{figure}[!h]
+    \caption{Voltage across R1 vs time  with $C = 100\mu F$}
+    \centering
+    \includegraphics[scale=0.45]{Simulation4-100u}
+\end{figure}
+\begin{figure}[!h]
+    \caption{Voltage across R1 vs time with $C = 1 mF$}
+    \centering
+    \includegraphics[scale=0.45]{Simulation4-1m}
+\end{figure}
+
+We can conclude from Figures 13, 14, and 15 that increasing the capacitance of the capacitor C1 reduces the ripple. With $C=1mF$, we have converted the ripple voltage into a smoother signal of 20V DC.
+
+This smoothing can be explained by the fact that with a large enough capacitor ($1mF$ in our case) when the ripple voltage rises, reactive power is stored in the capacitor. When the ripple voltage falls, reactive power is discharged from the capacitor raising the voltage. This also explains the reason why smaller capacitors did not fully remove the ripple voltage.
+
+\subsection*{Task 5}
+\subsection*{Task 6}
+\section{Conclusion}
+
 \end{document}
