@@ -1,0 +1,230 @@
+
+**** 03/15/21 17:50:25 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM0"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "a3-0-SCHEMATIC1-SIM0.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+.LIB ".\a3-0.lib" 
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 
+.PROBE 
+.INC "a3-0-SCHEMATIC1.net" 
+
+
+**** INCLUDING a3-0-SCHEMATIC1.net ****
+* source A3-0
+V_V1         N00026 0 10Vdc
+X_U2         N00553 N00200 N00026 N00029 VY uA741
+V_V0         N00029 0 -10Vdc
+V_VA         VG 0 2Vdc
+R_R1         VG 0  10k  
+V_VB         N00194 0  
++PULSE 0 10 0 0.49e-3 0.49e-3 1e-5 1e-3
+M_M1         VD VG 0 0 Mbreakn  
++ L=1e-6  
++ W=10e-6         
+R_R2         N00194 VD  100  
+R_R3         N00194 N00200  10k  
+R_R4         N00200 VY  10k  
+R_R5         VD N00553  10k  
+R_R6         N00553 0  10k  
+
+**** RESUMING a3-0-SCHEMATIC1-SIM0.sim.cir ****
+.INC "a3-0-SCHEMATIC1.als"
+
+
+
+**** INCLUDING a3-0-SCHEMATIC1.als ****
+.ALIASES
+V_V1            V1(+=N00026 -=0 )
+X_U2            U2(+=N00553 -=N00200 V+=N00026 V-=N00029 OUT=VY )
+V_V0            V0(+=N00029 -=0 )
+V_VA            VA(+=VG -=0 )
+R_R1            R1(1=VG 2=0 )
+V_VB            VB(+=N00194 -=0 )
+M_M1            M1(d=VD g=VG s=0 s=0 )
+R_R2            R2(1=N00194 2=VD )
+R_R3            R3(1=N00194 2=N00200 )
+R_R4            R4(1=N00200 2=VY )
+R_R5            R5(1=VD 2=N00553 )
+R_R6            R6(1=N00553 2=0 )
+_    _(VS=0)
+_    _(VG=VG)
+_    _(VD=VD)
+_    _(Vy=VY)
+.ENDALIASES
+
+**** RESUMING a3-0-SCHEMATIC1-SIM0.sim.cir ****
+.END
+
+**** 03/15/21 17:50:25 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM0"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.dx         
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 03/15/21 17:50:25 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM0"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.qx         
+               NPN             
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 03/15/21 17:50:25 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM0"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Mbreakn         
+               NMOS            
+       LEVEL    3            
+           L  100.000000E-06 
+           W  100.000000E-06 
+          LD  100.000000E-09 
+         VTO     .8          
+          KP  120.000000E-06 
+       GAMMA     .5          
+         PHI     .7          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB    1            
+        PBSW    1            
+          CJ  400.000000E-06 
+        CJSW  300.000000E-12 
+        MJSW     .5          
+        CGSO  200.000000E-12 
+        CGDO  200.000000E-12 
+        CGBO  100.000000E-12 
+        NSUB  100.000000E+15 
+         NFS    1.000000E+12 
+         TOX   20.000000E-09 
+          XJ  500.000000E-09 
+          UO  650            
+       UCRIT   10.000000E+03 
+        VMAX  100.000000E+03 
+       DELTA    3            
+       THETA     .1          
+         ETA    3.000000E-06 
+       KAPPA     .3          
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 03/15/21 17:50:25 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM0"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VD)-3.407E-06  (   VG)    2.0000  (   VY) 35.51E-06  (N00026)   10.0000     
+
+(N00029)  -10.0000 (N00194)    0.0000 (N00200)-381.1E-06 (N00553)-400.3E-06     
+
+(X_U2.6)-4.394E-09 (X_U2.7) 37.59E-06 (X_U2.8) 37.59E-06 (X_U2.9)    0.0000     
+
+(X_U2.10)    -.6081                   (X_U2.11)    9.9603                       
+
+(X_U2.12)    9.9603                   (X_U2.13)    -.5942                       
+
+(X_U2.14)    -.5942                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90) 41.66E-06                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V0         1.116E-03
+    V_VA        -2.000E-04
+    V_VB        -7.218E-08
+    X_U2.vb     -4.394E-14
+    X_U2.vc      8.999E-12
+    X_U2.ve      9.001E-12
+    X_U2.vlim    4.166E-08
+    X_U2.vlp    -4.000E-11
+    X_U2.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.27E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+
