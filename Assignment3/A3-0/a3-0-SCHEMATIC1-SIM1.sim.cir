@@ -10,7 +10,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.DC V_VA LIST 1V, 2V, 3V, 4V, 5V 
+.TRAN  0 10ms 0 
 .PROBE 
 .INC "a3-0-SCHEMATIC1.net" 
 

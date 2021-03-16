@@ -1,12 +1,12 @@
 @OrCAD Simulation Server Version: 1.0
 
-@Settings: 1 1
+@Settings: 0 1
 @General:
 ProfileName= "SIM1" 
 ProfileFile= "a3-0-SCHEMATIC1-SIM1.sim" 
 DesignFile= "a3-0.dsn" 0 
 ProjectFile= "A3-0.opj" 
-NetlistFile= "" 
+NetlistFile= "a3-0-SCHEMATIC1-SIM1.sim.cir" 
 RootSchematics= "SCHEMATIC1" 
 DataFile= "a3-0-SCHEMATIC1-SIM1.dat" 
 OutFile= "a3-0-SCHEMATIC1-SIM1.out" 
@@ -14,9 +14,9 @@ Notes=
 @#$BEGINNOTES
 @#$ENDNOTES
 @End General
-@Analysis: 0 0
+@Analysis: 0 1
 +0 0 0 
-+0 "1000ns" 
++0 "10ms" 
 +1 "" 
 +2 "0" 
 +3 "" 
@@ -33,7 +33,7 @@ Notes=
 +4 "" 
 +5 "" 
 @End Analysis
-@Analysis: 2 1
+@Analysis: 2 0
 +3 0
 +0 "VA" 
 +1 "" 
@@ -51,7 +51,7 @@ Notes=
 +2 "" 
 @End Analysis
 @Analysis: 4 0
-+0 0 1 0 0 0 1 0 
++0 0 1 0 0 0 0 0 
 +0 "" 
 +1 "" 
 +2 "" 
@@ -62,15 +62,15 @@ Notes=
 +7 "" 
 @End Analysis
 @Analysis: 5 0
-+0 0
-+0 "" 
++3 0
++0 "VA" 
 +1 "" 
 +2 "" 
 +3 "" 
 +4 "" 
 +5 "" 
 +6 "" 
-+7 "" 
++7 "2, 3, 4, 5" 
 @End Analysis
 @Analysis: 6 0
 +1 

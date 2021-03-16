@@ -2,15 +2,93 @@
   (ProjectVersion "19981106")
   (ProjectType "Analog or A/D Mixed Mode")
   (Folder "Design Resources"
-    (Folder "Library")
-    (NoModify))
-  (Folder "Outputs")
+    (Folder "Library"
+      (Sort User)
+      (File ".\a3-0.olb"
+        (Type "Schematic Library")
+        (DisplayName ".\a3-0.olb")))
+    (NoModify)
+    (File ".\a3-0.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag ".\false"))
+  (Folder "Outputs"
+    (File ".\a3-0-schematic1.net"
+      (Type "Report")))
   (Folder "PSpice Resources"
-    (Folder "Simulation Profiles")
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\a3-0-schematic1-sim0.sim"
+        (DisplayName "SCHEMATIC1-SIM0")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\a3-0-schematic1-sim1.sim"
+        (DisplayName "SCHEMATIC1-SIM1")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\a3-0-schematic1-sim2.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\a3-0-schematic1-sim2.sim"
+        (DisplayName "SCHEMATIC1-SIM2")
+        (Type "PSpice Profile")))
     (Folder "Model Libraries"
-      (Sort User))
+      (Sort User)
+      (File ".\a3-0.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\a3-0.lib")))
     (Folder "Stimulus Files"
       (Sort User))
     (Folder "Include Files"
       (Sort User)))
-  (DefaultLibraryBrowseDirectory "library\PSpice"))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (MbreakN3
+      (FullPartName "MbreakN3.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (uA741
+      (FullPartName "uA741.Normal")
+      (LibraryName
+         "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\EVAL.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "Library")
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 286"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 104 754 104 425")
+        (Scroll "43 0")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path
+         "D:\SCHOOL\UNIVERSITY\MCGILL\COURSE MATERIAL\FOURTH SEMESTER - WINTER 2021\ECSE331\ASSIGNMENTS\ASSIGNMENTS\ASSIGNMENT3\A3-0\A3-0.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

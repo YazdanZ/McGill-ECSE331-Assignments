@@ -1,0 +1,628 @@
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "a3-0-SCHEMATIC1-SIM2.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+.LIB ".\a3-0.lib" 
+* From [PSPICE NETLIST] section of pspiceev.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 
+.TEMP 10, 20, 27, 35, 50
+.PROBE 
+.INC "a3-0-SCHEMATIC1.net" 
+
+
+**** INCLUDING a3-0-SCHEMATIC1.net ****
+* source A3-0
+V_V1         N00026 0 10Vdc
+X_U2         N00553 N00200 N00026 N00029 VY uA741
+V_V0         N00029 0 -10Vdc
+V_V5         N00194 0  
++PULSE 0 10 0 0.49e-3 0.49e-3 1e-5 1e-3
+V_VA         VG 0 3Vdc
+R_R1         VG 0  10k  
+M_M1         VD VG 0 0 Mbreakn  
++ L=1e-6  
++ W=10e-6         
+R_R2         N00194 VD  100  
+R_R3         N00194 N00200  10k  
+R_R4         N00200 VY  10k  
+R_R5         VD N00553  10k  
+R_R6         N00553 0  10k  
+
+**** RESUMING a3-0-SCHEMATIC1-SIM2.sim.cir ****
+.INC "a3-0-SCHEMATIC1.als"
+
+
+
+**** INCLUDING a3-0-SCHEMATIC1.als ****
+.ALIASES
+V_V1            V1(+=N00026 -=0 )
+X_U2            U2(+=N00553 -=N00200 V+=N00026 V-=N00029 OUT=VY )
+V_V0            V0(+=N00029 -=0 )
+V_V5            V5(+=N00194 -=0 )
+V_VA            VA(+=VG -=0 )
+R_R1            R1(1=VG 2=0 )
+M_M1            M1(d=VD g=VG s=0 s=0 )
+R_R2            R2(1=N00194 2=VD )
+R_R3            R3(1=N00194 2=N00200 )
+R_R4            R4(1=N00200 2=VY )
+R_R5            R5(1=VD 2=N00553 )
+R_R6            R6(1=N00553 2=0 )
+_    _(VS=0)
+_    _(VG=VG)
+_    _(VD=VD)
+_    _(Vy=VY)
+.ENDALIASES
+
+**** RESUMING a3-0-SCHEMATIC1-SIM2.sim.cir ****
+.END
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.dx         
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.qx         
+               NPN             
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Mbreakn         
+               NMOS            
+       LEVEL    3            
+           L  100.000000E-06 
+           W  100.000000E-06 
+          LD  100.000000E-09 
+         VTO     .8          
+          KP  120.000000E-06 
+       GAMMA     .5          
+         PHI     .7          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB    1            
+        PBSW    1            
+          CJ  400.000000E-06 
+        CJSW  300.000000E-12 
+        MJSW     .5          
+        CGSO  200.000000E-12 
+        CGDO  200.000000E-12 
+        CGBO  100.000000E-12 
+        NSUB  100.000000E+15 
+         NFS    1.000000E+12 
+         TOX   20.000000E-09 
+          XJ  500.000000E-09 
+          UO  650            
+       UCRIT   10.000000E+03 
+        VMAX  100.000000E+03 
+       DELTA    3            
+       THETA     .1          
+         ETA    3.000000E-06 
+       KAPPA     .3          
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   10.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ X_U2.dx    5.106E-17  1.015E+00  0.000E+00  1.000E+00  0.000E+00           
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ Mbreakn    8.234E-01  7.322E-01  1.015E+00  6.260E-16  1.310E-04  7.094E+02
+
+
+
+ **** BJT MODEL PARAMETERS
+ NAME          BF        ISE        VJE        CJE         RE         RB
+               BR        ISC        VJC        CJC         RC        RBM
+               IS        ISS        VJS        CJS      GAMMA        RCO
+               VO
+ X_U2.qx    9.375E+01  0.000E+00  7.794E-01  0.000E+00  0.000E+00  0.000E+00
+            1.000E+00  0.000E+00  7.794E-01  0.000E+00  0.000E+00  0.000E+00
+            5.106E-17  0.000E+00  7.794E-01  0.000E+00  1.000E-11  0.000E+00
+            1.000E+01
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   10.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VD)-3.062E-06  (   VG)    3.0000  (   VY) 36.50E-06  (N00026)   10.0000     
+
+(N00029)  -10.0000 (N00194)    0.0000 (N00200)-380.5E-06 (N00553)-400.1E-06     
+
+(X_U2.6)-4.559E-09 (X_U2.7) 38.59E-06 (X_U2.8) 38.59E-06 (X_U2.9)    0.0000     
+
+(X_U2.10)    -.6416                   (X_U2.11)    9.9603                       
+
+(X_U2.12)    9.9604                   (X_U2.13)    -.6277                       
+
+(X_U2.14)    -.6277                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90) 41.70E-06                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V0         1.116E-03
+    V_V5        -6.867E-08
+    V_VA        -3.000E-04
+    X_U2.vb     -4.559E-14
+    X_U2.vc      8.998E-12
+    X_U2.ve      9.001E-12
+    X_U2.vlim    4.170E-08
+    X_U2.vlp    -4.000E-11
+    X_U2.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.32E-02  WATTS
+
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ X_U2.dx    2.675E-16  1.006E+00  0.000E+00  1.000E+00  0.000E+00           
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ Mbreakn    8.097E-01  7.133E-01  1.006E+00  3.319E-15  1.243E-04  6.734E+02
+
+
+
+ **** BJT MODEL PARAMETERS
+ NAME          BF        ISE        VJE        CJE         RE         RB
+               BR        ISC        VJC        CJC         RC        RBM
+               IS        ISS        VJS        CJS      GAMMA        RCO
+               VO
+ X_U2.qx    9.375E+01  0.000E+00  7.622E-01  0.000E+00  0.000E+00  0.000E+00
+            1.000E+00  0.000E+00  7.622E-01  0.000E+00  0.000E+00  0.000E+00
+            2.675E-16  0.000E+00  7.622E-01  0.000E+00  1.000E-11  0.000E+00
+            1.000E+01
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VD)-3.095E-06  (   VG)    3.0000  (   VY) 36.11E-06  (N00026)   10.0000     
+
+(N00029)  -10.0000 (N00194)    0.0000 (N00200)-380.8E-06 (N00553)-400.2E-06     
+
+(X_U2.6)-4.495E-09 (X_U2.7) 38.19E-06 (X_U2.8) 38.19E-06 (X_U2.9)    0.0000     
+
+(X_U2.10)    -.6219                   (X_U2.11)    9.9603                       
+
+(X_U2.12)    9.9603                   (X_U2.13)    -.6080                       
+
+(X_U2.14)    -.6080                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90) 41.69E-06                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V0         1.116E-03
+    V_V5        -6.902E-08
+    V_VA        -3.000E-04
+    X_U2.vb     -4.364E-14
+    X_U2.vc      9.000E-12
+    X_U2.ve      9.001E-12
+    X_U2.vlim    4.169E-08
+    X_U2.vlp    -4.000E-11
+    X_U2.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.32E-02  WATTS
+
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ X_U2.dx    8.000E-16  1.000E+00  0.000E+00  1.000E+00  0.000E+00           
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ Mbreakn    8.000E-01  7.000E-01  1.000E+00  1.000E-14  1.200E-04  6.500E+02
+
+
+
+ **** BJT MODEL PARAMETERS
+ NAME          BF        ISE        VJE        CJE         RE         RB
+               BR        ISC        VJC        CJC         RC        RBM
+               IS        ISS        VJS        CJS      GAMMA        RCO
+               VO
+ X_U2.qx    9.375E+01  0.000E+00  7.500E-01  0.000E+00  0.000E+00  0.000E+00
+            1.000E+00  0.000E+00  7.500E-01  0.000E+00  0.000E+00  0.000E+00
+            8.000E-16  0.000E+00  7.500E-01  0.000E+00  1.000E-11  0.000E+00
+            1.000E+01
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VD)-3.117E-06  (   VG)    3.0000  (   VY) 35.80E-06  (N00026)   10.0000     
+
+(N00029)  -10.0000 (N00194)    0.0000 (N00200)-380.9E-06 (N00553)-400.2E-06     
+
+(X_U2.6)-4.237E-09 (X_U2.7) 37.88E-06 (X_U2.8) 37.88E-06 (X_U2.9)    0.0000     
+
+(X_U2.10)    -.6081                   (X_U2.11)    9.9603                       
+
+(X_U2.12)    9.9603                   (X_U2.13)    -.5942                       
+
+(X_U2.14)    -.5942                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90) 41.67E-06                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V0         1.116E-03
+    V_V5        -6.926E-08
+    V_VA        -3.000E-04
+    X_U2.vb     -4.234E-14
+    X_U2.vc      9.001E-12
+    X_U2.ve      9.001E-12
+    X_U2.vlim    4.167E-08
+    X_U2.vlp    -4.000E-11
+    X_U2.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.32E-02  WATTS
+
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   35.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ X_U2.dx    2.638E-15  9.927E-01  0.000E+00  1.000E+00  0.000E+00           
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ Mbreakn    7.888E-01  6.847E-01  9.927E-01  3.322E-14  1.154E-04  6.249E+02
+
+
+
+ **** BJT MODEL PARAMETERS
+ NAME          BF        ISE        VJE        CJE         RE         RB
+               BR        ISC        VJC        CJC         RC        RBM
+               IS        ISS        VJS        CJS      GAMMA        RCO
+               VO
+ X_U2.qx    9.375E+01  0.000E+00  7.360E-01  0.000E+00  0.000E+00  0.000E+00
+            1.000E+00  0.000E+00  7.360E-01  0.000E+00  0.000E+00  0.000E+00
+            2.638E-15  0.000E+00  7.360E-01  0.000E+00  1.000E-11  0.000E+00
+            1.000E+01
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   35.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VD)-3.141E-06  (   VG)    3.0000  (   VY) 35.41E-06  (N00026)   10.0000     
+
+(N00029)  -10.0000 (N00194)    0.0000 (N00200)-381.2E-06 (N00553)-400.2E-06     
+
+(X_U2.6)-4.027E-09 (X_U2.7) 37.49E-06 (X_U2.8) 37.49E-06 (X_U2.9)    0.0000     
+
+(X_U2.10)    -.5922                   (X_U2.11)    9.9603                       
+
+(X_U2.12)    9.9603                   (X_U2.13)    -.5783                       
+
+(X_U2.14)    -.5783                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90) 41.66E-06                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V0         1.116E-03
+    V_V5        -6.952E-08
+    V_VA        -3.000E-04
+    X_U2.vb     -4.018E-14
+    X_U2.vc      9.003E-12
+    X_U2.ve      9.003E-12
+    X_U2.vlim    4.166E-08
+    X_U2.vlp    -4.000E-11
+    X_U2.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.32E-02  WATTS
+
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ X_U2.dx    2.118E-14  9.787E-01  0.000E+00  1.000E+00  0.000E+00           
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ Mbreakn    7.676E-01  6.557E-01  9.787E-01  2.698E-13  1.074E-04  5.819E+02
+
+
+
+ **** BJT MODEL PARAMETERS
+ NAME          BF        ISE        VJE        CJE         RE         RB
+               BR        ISC        VJC        CJC         RC        RBM
+               IS        ISS        VJS        CJS      GAMMA        RCO
+               VO
+ X_U2.qx    9.375E+01  0.000E+00  7.095E-01  0.000E+00  0.000E+00  0.000E+00
+            1.000E+00  0.000E+00  7.095E-01  0.000E+00  0.000E+00  0.000E+00
+            2.118E-14  0.000E+00  7.095E-01  0.000E+00  1.000E-11  0.000E+00
+            1.000E+01
+
+**** 03/15/21 20:26:24 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM2"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   50.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VD)-3.182E-06  (   VG)    3.0000  (   VY) 34.58E-06  (N00026)   10.0000     
+
+(N00029)  -10.0000 (N00194)    0.0000 (N00200)-381.6E-06 (N00553)-400.3E-06     
+
+(X_U2.6)-4.388E-09 (X_U2.7) 36.66E-06 (X_U2.8) 36.66E-06 (X_U2.9)    0.0000     
+
+(X_U2.10)    -.5623                   (X_U2.11)    9.9603                       
+
+(X_U2.12)    9.9603                   (X_U2.13)    -.5485                       
+
+(X_U2.14)    -.5485                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90) 41.62E-06                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V0         1.116E-03
+    V_V5        -6.998E-08
+    V_VA        -3.000E-04
+    X_U2.vb     -4.295E-14
+    X_U2.vc      9.021E-12
+    X_U2.ve      9.022E-12
+    X_U2.vlim    4.162E-08
+    X_U2.vlp    -4.002E-11
+    X_U2.vln    -4.002E-11
+
+    TOTAL POWER DISSIPATION   2.32E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .13
+

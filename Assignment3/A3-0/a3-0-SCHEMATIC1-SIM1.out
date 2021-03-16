@@ -1,5 +1,5 @@
 
-**** 03/15/21 17:54:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/15/21 19:23:33 *********** Evaluation PSpice (Nov 1999) **************
 
  ** Profile: "SCHEMATIC1-SIM1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.DC V_VA LIST 1V, 2V, 3V, 4V, 5V 
+.TRAN  0 10ms 0 
 .PROBE 
 .INC "a3-0-SCHEMATIC1.net" 
 
@@ -73,7 +73,7 @@ _    _(Vy=VY)
 **** RESUMING a3-0-SCHEMATIC1-SIM1.sim.cir ****
 .END
 
-**** 03/15/21 17:54:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/15/21 19:23:33 *********** Evaluation PSpice (Nov 1999) **************
 
  ** Profile: "SCHEMATIC1-SIM1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
 
@@ -91,7 +91,7 @@ _    _(Vy=VY)
           RS    1            
 
 
-**** 03/15/21 17:54:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/15/21 19:23:33 *********** Evaluation PSpice (Nov 1999) **************
 
  ** Profile: "SCHEMATIC1-SIM1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
 
@@ -115,7 +115,7 @@ _    _(Vy=VY)
            D     .87         
 
 
-**** 03/15/21 17:54:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/15/21 19:23:33 *********** Evaluation PSpice (Nov 1999) **************
 
  ** Profile: "SCHEMATIC1-SIM1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
 
@@ -169,9 +169,62 @@ _    _(Vy=VY)
          VDD    0            
        XPART    0            
 
+
+**** 03/15/21 19:23:33 *********** Evaluation PSpice (Nov 1999) **************
+
+ ** Profile: "SCHEMATIC1-SIM1"  [ D:\School\University\McGill\Course Material\Fourth Semester - Winter 2021\ECSE331\Assignments\Assig
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   VD)-3.407E-06  (   VG)    2.0000  (   VY) 35.51E-06  (N00026)   10.0000     
+
+(N00029)  -10.0000 (N00194)    0.0000 (N00200)-381.1E-06 (N00553)-400.3E-06     
+
+(X_U2.6)-4.394E-09 (X_U2.7) 37.59E-06 (X_U2.8) 37.59E-06 (X_U2.9)    0.0000     
+
+(X_U2.10)    -.6081                   (X_U2.11)    9.9603                       
+
+(X_U2.12)    9.9603                   (X_U2.13)    -.5942                       
+
+(X_U2.14)    -.5942                   (X_U2.53)    9.0000                       
+
+(X_U2.54)   -9.0000                   (X_U2.90) 41.66E-06                       
+
+(X_U2.91)   40.0000                   (X_U2.92)  -40.0000                       
+
+(X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V0         1.116E-03
+    V_VA        -2.000E-04
+    V_VB        -7.218E-08
+    X_U2.vb     -4.394E-14
+    X_U2.vc      8.999E-12
+    X_U2.ve      9.001E-12
+    X_U2.vlim    4.166E-08
+    X_U2.vlp    -4.000E-11
+    X_U2.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.27E-02  WATTS
+
 
 
           JOB CONCLUDED
 
-          TOTAL JOB TIME             .02
+          TOTAL JOB TIME             .05
 
