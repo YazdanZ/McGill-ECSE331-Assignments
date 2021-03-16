@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{gensymb}
 \usepackage{graphicx}
+\usepackage{float}
 \graphicspath{ {./images/}  }
 
 \begin{document}
@@ -63,8 +64,128 @@ The circuit must first be modified by replacing the saw-tooth signal $V_B$ with 
 
 \subsection{Task 3}
 The third part of the lab examines the effect of temperature on the MOSFET. First, the circuit must be restored back to its original state in Figure1 by using the saw-tooth waveform as $V_B$ and setting $V_A$ to 3V. The simulation is conducted at temperatures 10°C, 20°C, 27°C, 35°C and 50°C. The $I_D$ vs $V_{DS}$ plots at these temperatures are compared.
+
 \section{Analysis}
 
+\subsection{Task 1}
+Task 1 of the experiment involves examining the I-V characteristics of the MOSFET.
+
+We first construct the circuit shown in Figure1 in PSPICE using a uA741 op-amp, a MbreakN3 NMOS FET with $W = 10\mu m$ and $L = 1 \mu m$ and $V_B$ as a saw-tooth waveform over a 0V to +10V signal range using the VPULSE component with the following characteristics:
+\\
+
+\begin{tabular}{l}
+    $V1 = 0$\\
+    $V2 = 10$\\
+    $TD = 0$\\
+    $TR = 0.49e^{-3}$\\
+    $TF = 0.49e^{-3}$\\
+    $PW = 1e^{-5}$\\
+    $PER=1e^{-3}$\\
+\end{tabular}
+\vspace{5mm}
+
+We implement the -10V and +10V voltages on pin 4 and pin 7 of the uA741 op-amp using two DC voltage sources. The constructed schematic in PSPICE is shown in Figure 2.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.38]{Circuit1}
+    \caption{Task1 circuit number 1}
+\end{figure}
+
+
+Initially, $V_A$ is set to 0V. When the circuit is constructed, we perform a time domain simulation with $V_A = 0$ to determine to obtain plots of $V_{DS}$ vs time and $I_D$ vs time. The plots of $V_{DS}$ vs time and $I_D$ vs time can be seen in Figure 3 and Figure 4 respectively.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.45]{SIM1}
+    \caption{$V_{DS}$ vs time with $V_A = 0V$}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.455]{SIM2}
+    \caption{$I_{D}$ vs time with $V_A = 0V$}
+\end{figure}
+
+It can be seen from Figure 3 that the voltage $V_{DS}$ follows a triangular waveform over a 0V to 10V signal range with a period of 1ms. On the other hand, the FET drain current simulation shown in Figure 4, is in the range of picoamperes which is close to 0. This is expected as the gate voltage $V_G$ is equal to zero. Therefore, the drain current $I_D$ remains negligible irrespective of any change in the drain-source voltage $V_{DS}$.
+
+Next, to determine the threshold voltage $V_t$, $V_{GS}$ is increased in 1V increments until $I_D$ becomes greater than 0.5mA. Once $I_D$ becomes greater than 0.5mA, the voltage $V_{GS}$ is considered to be the threshold voltage $V_t$.
+To increase $V_{GS}$ in 1V increments, $V_A$ is increased in 1V increments as the value of $V_A$ is equal to the value of $V_{GS}$.
+
+The value of $V_A$ is increased from 0V to 1V and the corresponding $I_D$ vs time plot is obtained. At $V_{GS} = 1V$, the $I_D$ vs time plot can be seen in Figure 5. From Figure 5, we can see that $I_D$ isn’t greater than 0.5mA, thus we need to continue increasing $V_{GS}$ by 1V.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.43]{SIM3-1V}
+    \caption{$I_{D}$ vs time with $V_A = 1V$}
+\end{figure}
+
+After the value of $V_A$ is increased from 1V to 2V, its corresponding $I_D$ vs time plot is obtained. The plot of $I_D$ vs time can be seen in Figure 6. Based on the plot, $I_D$ is found to be approximately 0.65mA which is greater than 0.5mA. Thus, the threshold voltage $V_t$ is determined to be 2V.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.43]{SIM3-2V}
+    \caption{$I_{D}$ vs time with $V_A = 2V$}
+\end{figure}
+
+With $V_A$ set to 2V, the output voltage of the op-amp ($V_Y$) is compared with the current through the 100$\Omega$ resistor when $V_A = V_t$. The plots of $\frac{V_Y}{100}$ vs time and the current through the 100$\Omega$ resistor vs time are obtained when $V_A = 2V$. These plots can be seen in Figure 7 and Figure 8.
+
+
+Based on the plots, the value of $\frac{V_Y}{100}$ is the negative value of the current through the 100 $\Omega$ resistor. The relation between these two values can be better seen in Figure 9.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.435]{SIM4}
+    \caption{$\frac{V_Y}{100}$ vs time with $V_A = 2V$}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.435]{SIM5}
+    \caption{I through the 100 $\Omega$ resistor vs time with $V_A = 2V$}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.435]{SIM6}
+    \caption{I through the 100 $\Omega$ resistor vs time and $\frac{V_Y}{100}$ with $V_A = 2V$}
+\end{figure}
+
+Next, $V_{GS}$ is increased from the threshold voltage of 2V in 1V increments until it reaches 5V. Then, the traces of $I_D$ vs $V_{DS}$ at each value of $V_{GS}$ are obtained. The traces of $I_D$ vs $V_{DS}$ combined in a single plot can be seen in Figure 10 and 11.
+From the plot, the voltage region of $V_{DS}$ at which the NMOS operates in triode mode increases as $V_{GS}$ increases; larger $V_{DS}$ is needed to enter saturation mode. Also, the $I_D$ when the NMOS enters saturation mode increases when $V_{GS}$ increases.\\
+
+These observations are consistent with the theoretical equations of NMOS. NMOS operates in saturation mode when $V_{DS} > V_{GS} - V_t$; $V_{DS}$ needs increase when $V_{GS}$ increases to enter saturation mode which is consistent with the observations of the plot. The value of ID when the NMOS operates in triode mode is:
+
+\[I_D = k_n^{'}(\frac{W}{L})[(V_{GS} - V_t)V_{DS} - 0.5(V_{DS})^2]\]
+
+\noindent and the value of $I_D$ when operating in saturation is:
+\[I_D = 0.5(k_n^{'})(\frac{W}{L})(V_{GS} - V_t)^2(1+\lambda V_{DS})\]
+Based on these equations, $I_D$ increases when $V_{GS}$ increases in both triode and saturation mode. Thus, the observation of $I_D$ increasing when $V_{GS}$ is increased is consistent with the theory.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.435]{SIM7}
+    \caption{$I_D$ vs $V_{DS}$ for $V_G$ equal to 2V, 3V, 4V, and 5V}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.435]{SIM8}
+    \caption{$I_D$ vs $V_{DS}$ for $V_G$ equal to 2V, 3V, 4V, and 5V}
+\end{figure}
+
+The early voltage for a MOSFET is 1/$\lambda$ and can be found by extending the linear trendline of the $I_D$ vs $V_{DS}$ traces in saturation mode towards the left of the plot until they meet at $I_D = 0$. The $V_{DS}$ value when they meet at $I_D =0$ is -1/$\lambda$.  From Figure 12, the average $V_{DS}$ value that the extended trendlines reach zero is approximately -43V. Thus, the early voltage is determined to be approximately 43V.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{SIM13}
+    \caption{$I_D$ vs $V_{DS}$ for $V_G$ equal to 2V, 3V, 4V, and 5V}
+\end{figure}
+
+\subsection{Task 2}
+\subsection{Task 3}
 
 \section{Conclusion}
 
