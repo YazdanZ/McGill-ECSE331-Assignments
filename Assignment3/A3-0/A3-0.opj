@@ -26,10 +26,18 @@
          ".\a3-0-schematic1-sim1.sim"
         (DisplayName "SCHEMATIC1-SIM1")
         (Type "PSpice Profile"))
-      (ActiveProfile ".\a3-0-schematic1-sim2.sim")
       (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
          ".\a3-0-schematic1-sim2.sim"
         (DisplayName "SCHEMATIC1-SIM2")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\a3-0-schematic1-sim4.sim"
+        (DisplayName "SCHEMATIC1-SIM4")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\a3-0-schematic1-sim5.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\a3-0-schematic1-sim5.sim"
+        (DisplayName "SCHEMATIC1-SIM5")
         (Type "PSpice Profile")))
     (Folder "Model Libraries"
       (Sort User)
@@ -42,13 +50,13 @@
       (Sort User)))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
-    (VPULSE
-      (FullPartName "VPULSE.Normal")
+    (VDC
+      (FullPartName "VDC.Normal")
       (LibraryName
          "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0"))
-    (VDC
-      (FullPartName "VDC.Normal")
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
       (LibraryName
          "C:\PROGRAM FILES\ORCAD_DEMO\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0"))

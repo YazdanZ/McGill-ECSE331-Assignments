@@ -1,10 +1,8 @@
 * source A3-0
-V_V1         N00026 0 10Vdc
+V_V1         N00026 0 10V
 X_U2         N00553 N00200 N00026 N00029 VY uA741
-V_V0         N00029 0 -10Vdc
-V_V5         N00194 0  
-+PULSE 0 10 0 0.49e-3 0.49e-3 1e-5 1e-3
-V_VA         VG 0 3Vdc
+V_V0         N00029 0 -10V
+V_VA         VG 0 3V
 R_R1         VG 0  10k  
 M_M1         VD VG 0 0 Mbreakn  
 + L=1e-6  
@@ -14,3 +12,4 @@ R_R3         N00194 N00200  10k
 R_R4         N00200 VY  10k  
 R_R5         VD N00553  10k  
 R_R6         N00553 0  10k  
+V_VB         N00194 0 5V
