@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{gensymb}
 \usepackage{graphicx}
+\usepackage{xfrac}
 \usepackage{float}
 \graphicspath{ {./images/}  }
 
@@ -56,18 +57,18 @@ Finally, we increase $V_{GS}$ in increments of 1V until $V_{GS}$ reaches 5V whil
 \subsection{Task 2}
 The second part of the lab involves the computation of the MOSFET transconductance ($g_m$) of the NMOS FET. The transconductance is found using the following equation:
 
+\begin{equation}
+    g_m = \frac{\Delta i_D}{\Delta v_{GS}}
+\end{equation}
 
-\[g_m = \frac{\Delta i_D}{v_{GS}}\]
-
-
-The circuit must first be modified by replacing the saw-tooth signal $V_B$ with a DC voltage source set to 5V and $V_A$ needs to be set to 3V. $I_D$ and $V_GS$ is recorded at these values and they’re recorded again when $V_A$ is adjusted by 0.1V. $\Delta I_D$ and $\Delta V_{GS}$ are then found by taking the differences between the measured $V_{GS}$ and $I_D$ and the transconductance is computed.
+The circuit must first be modified by replacing the saw-tooth signal $V_B$ with a DC voltage source set to 5V and $V_A$ needs to be set to 3V. $I_D$ and $V_GS$ are recorded at these values and they’re recorded again when $V_A$ is adjusted by 0.1V. $\Delta I_D$ and $\Delta V_{GS}$ are then found by taking the differences between the measured $V_{GS}$ and $I_D$ and the transconductance is computed.
 
 \subsection{Task 3}
 The third part of the lab examines the effect of temperature on the MOSFET. First, the circuit must be restored back to its original state in Figure1 by using the saw-tooth waveform as $V_B$ and setting $V_A$ to 3V. The simulation is conducted at temperatures 10°C, 20°C, 27°C, 35°C and 50°C. The $I_D$ vs $V_{DS}$ plots at these temperatures are compared.
 
 \section{Analysis}
 
-\subsection{Task 1}
+\subsection{MOSFET $I_D$-$V_{DS}$ Characteristics}
 Task 1 of the experiment involves examining the I-V characteristics of the MOSFET.
 
 We first construct the circuit shown in Figure1 in PSPICE using a uA741 op-amp, a MbreakN3 NMOS FET with $W = 10\mu m$ and $L = 1 \mu m$ and $V_B$ as a saw-tooth waveform over a 0V to +10V signal range using the VPULSE component with the following characteristics:
@@ -93,7 +94,7 @@ We implement the -10V and +10V voltages on pin 4 and pin 7 of the uA741 op-amp u
 \end{figure}
 
 
-Initially, $V_A$ is set to 0V. When the circuit is constructed, we perform a time domain simulation with $V_A = 0$ to determine to obtain plots of $V_{DS}$ vs time and $I_D$ vs time. The plots of $V_{DS}$ vs time and $I_D$ vs time can be seen in Figure 3 and Figure 4 respectively.
+Initially, $V_A$ is set to 0V. When the circuit is constructed, we perform a time-domain simulation with $V_A = 0$ to determine to obtain plots of $V_{DS}$ vs time and $I_D$ vs time. The plots of $V_{DS}$ vs time and $I_D$ vs time can be seen in Figure 3 and Figure 4 respectively.
 
 \begin{figure}[h]
     \centering
@@ -166,13 +167,13 @@ Based on these equations, $I_D$ increases when $V_{GS}$ increases in both triode
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.435]{SIM7}
+    \includegraphics[scale=0.42]{SIM7}
     \caption{$I_D$ vs $V_{DS}$ for $V_G$ equal to 2V, 3V, 4V, and 5V}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.435]{SIM8}
+    \includegraphics[scale=0.42]{SIM8}
     \caption{$I_D$ vs $V_{DS}$ for $V_G$ equal to 2V, 3V, 4V, and 5V}
 \end{figure}
 
@@ -180,14 +181,43 @@ The early voltage for a MOSFET is 1/$\lambda$ and can be found by extending the 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{SIM13}
+    \includegraphics[scale=0.5]{SIM14}
     \caption{$I_D$ vs $V_{DS}$ for $V_G$ equal to 2V, 3V, 4V, and 5V}
 \end{figure}
 
-\subsection{Task 2}
-\subsection{Task 3}
+\subsection{MOSFET Transconductance}
+Task 2 of the experiment involves computing the transconductance ($g_m$) of the MOSFET. The transconductance can be found using Equation 1.
+
+First, the saw-tooth signal source $V_B$ is replaced with a DC voltage source and set to 5V while $V_A$ is set to 3V. $V_{GS}$ and $I_D$ are measured at these values of $V_B$ and $V_A$. When $V_A$ is 3V, $V_{GS}$ is found to be 3V and $I_D$ is found to be 1.417mA as shown in Figure 13.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Circuit5}
+    \caption{$I_D$ measurement with $V_A = 3V$ and $V_B = 5V$DC}
+\end{figure}
+
+The value of $V_A$ is increased by 0.1V; the new value of $V_A$ is 3.1V, thus $\Delta V_{GS}$ is 0.1V. When $V_A$ is 3.1V, $V_{GS}$ is found to be 3.1V and $I_D$ is found to be 1.503mA (Figure 14). Thus $\Delta I_D$  is 0.86mA/V.
+
+\noindent using Equation 1:
+\[g_m = \frac{\Delta i_D}{\Delta v_{GS}} = \frac{1.503 - 1.417}{0.1} = 0.86\sfrac{mA}{V}\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Circuit4}
+    \caption{$I_D$ measurement with $V_A = 3V$ and $V_B = 5V$DC}
+\end{figure}
+
+\subsection{MOSFET Temperature Effects}
+Task 3 of the experiment involves examining the effects of temperature on the $I_D-V_{DS}$ characteristics of the MOSFET.
+The circuit is restored to its original state by reconstructing $V_B$ as the saw-tooth waveform from Task 1 and $V_A$ is set to 3V. The simulation is then run at 5 different temperatures: 10°C, 20°C, 27°C, 35°C and 50°C. The traces of the $I_D-V_{DS}$ characteristics at each temperature are obtained and compared. The plot of $I_D$ vs $V_{DS}$ containing the traces ran at different temperatures can be seen in Figure 15.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.53]{SIM12}
+    \includegraphics[scale=0.17]{SIM11}
+    \caption{$I_D-V_{DS}$ characteristics at 5 different temperatures}
+\end{figure}
+
+From the plot in Figure 15, $I_D$ during saturation is lower for higher temperatures compared to $I_D$ at lower temperatures. At gate voltages significantly greater than the threshold voltage, drain current decreases as temperature increases. As temperature increases, carrier mobility decreases. Thus, when the gate voltage is significantly greater than the threshold voltage, the carrier mobility decreases which causes the drain current to be lower.
 
 \section{Conclusion}
-
-\section{Appendix}
+In conclusion, we learned about the DC characteristics of MOSFETs by simulation them in PSPICE. At first, we analyzed the MOSFET $I_D-V_{DS}$ characteristics through multiple experiments and plots. We found characteristics such as the NMOS threshold and the early voltage. In the second part, we ran studies to find the transconductance $g_m$ of our device. Finally, we plot the $I_D-V_{DS}$ characteristics of our device at different temperatures to study MOSFET temperature effects. All the mentioned analysis were also verified with the studied theory.
 \end{document}
