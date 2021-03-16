@@ -32,7 +32,7 @@
 \clearpage
 
 \begin{abstract}
-    A MOSFET is a three-terminal device that allows current to flow through it when a certain threshold voltage is reached. The three terminals of a MOSFET are called the gate, the source, and the drain. There are two types of MOSFETs: NMOS FET and PMOS FET. Current flows from the drain to the source for NMOS FET and vice versa for PMOS FET. For NMOS FET, current will not flow through the device unless the voltage across the gate terminals and the source terminal $V_{GS}$ is greater than a certain threshold voltage $V_{t}$. For PMOS FET, current will not flow through the device unless $V_{GS}$ is less than $V_{t}$.  MOSFETs have two modes of operation: triode and saturation. The difference between these two modes is that the equation to calculate the current flowing through the MOSFET $I_{D}$ is different. In triode mode, $I_{D}$ increases much more rapidly, as the voltage across the drain and source increases $V_{DS}$, than in saturation mode. NMOS FETs operate in triode mode when $V_{DS} < V_{GS} - V_{t}$ , and they operate in saturation mode when $V{DS} > V_{GS} - V_{t}$.  For PMOS FETs, the conditions of the operation modes are the opposite of NMOS FET; triode mode when $V_{DS} > V_{GS} - V_{t}$ and saturation mode when $V_{DS} < V_{GS} - V_{t}$.
+    A MOSFET is a three-terminal device that allows current to flow through it when a certain threshold voltage is reached. The three terminals of a MOSFET are called the gate, the source, and the drain. There are two types of MOSFETs: NMOS FET and PMOS FET. Current flows from the drain to the source for NMOS FET and vice versa for PMOS FET. For NMOS FET, current will not flow through the device unless the voltage across the gate terminal and the source terminal $V_{GS}$ is greater than a certain threshold voltage $V_{t}$. For PMOS FET, current will not flow through the device unless $V_{GS}$ is less than $V_{t}$.  MOSFETs have two modes of operation: triode and saturation. The difference between these two modes is that the equation to calculate the current flowing through the MOSFET $I_{D}$ is different. In triode mode, $I_{D}$ increases much more rapidly, as the voltage across the drain and source increases $V_{DS}$, than in saturation mode. NMOS FETs operate in triode mode when $V_{DS} < V_{GS} - V_{t}$ , and they operate in saturation mode when $V{DS} > V_{GS} - V_{t}$.  For PMOS FETs, the conditions of the operation modes are the opposite of NMOS FET; triode mode when $V_{DS} > V_{GS} - V_{t}$ and saturation mode when $V_{DS} < V_{GS} - V_{t}$.
 
 \end{abstract}
 
@@ -94,7 +94,7 @@ We implement the -10V and +10V voltages on pin 4 and pin 7 of the uA741 op-amp u
 \end{figure}
 
 
-Initially, $V_A$ is set to 0V. When the circuit is constructed, we perform a time-domain simulation with $V_A = 0$ to determine to obtain plots of $V_{DS}$ vs time and $I_D$ vs time. The plots of $V_{DS}$ vs time and $I_D$ vs time can be seen in Figure 3 and Figure 4 respectively.
+Initially, $V_A$ is set to 0V. When the circuit is constructed, we perform a time-domain simulation with $V_A = 0$ to obtain plots of $V_{DS}$ vs time and $I_D$ vs time. The plots of $V_{DS}$ vs time and $I_D$ vs time can be seen in Figure 3 and Figure 4 respectively.
 
 \begin{figure}[h]
     \centering
@@ -156,13 +156,13 @@ Based on the plots, the value of $\frac{V_Y}{100}$ is the negative value of the 
 Next, $V_{GS}$ is increased from the threshold voltage of 2V in 1V increments until it reaches 5V. Then, the traces of $I_D$ vs $V_{DS}$ at each value of $V_{GS}$ are obtained. The traces of $I_D$ vs $V_{DS}$ combined in a single plot can be seen in Figure 10 and 11.
 From the plot, the voltage region of $V_{DS}$ at which the NMOS operates in triode mode increases as $V_{GS}$ increases; larger $V_{DS}$ is needed to enter saturation mode. Also, the $I_D$ when the NMOS enters saturation mode increases when $V_{GS}$ increases.\\
 
-These observations are consistent with the theoretical equations of NMOS. NMOS operates in saturation mode when $V_{DS} > V_{GS} - V_t$; $V_{DS}$ needs increase when $V_{GS}$ increases to enter saturation mode which is consistent with the observations of the plot. The value of ID when the NMOS operates in triode mode is:
+These observations are consistent with the theoretical equations of NMOS. NMOS operates in saturation mode when $V_{DS} > V_{GS} - V_t$; $V_{DS}$ needs to increase when $V_{GS}$ increases to enter saturation mode which is consistent with the observations of the plot. The value of ID when the NMOS operates in triode mode is:
 
 \[I_D = k_n^{'}(\frac{W}{L})[(V_{GS} - V_t)V_{DS} - 0.5(V_{DS})^2]\]
 
 \noindent and the value of $I_D$ when operating in saturation is:
 \[I_D = 0.5(k_n^{'})(\frac{W}{L})(V_{GS} - V_t)^2(1+\lambda V_{DS})\]
-Based on these equations, $I_D$ increases when $V_{GS}$ increases in both triode and saturation mode. Thus, the observation of $I_D$ increasing when $V_{GS}$ is increased is consistent with the theory.
+Based on these equations, $I_D$ increases when $V_{GS}$ increases in both triode and saturation mode. Thus, the observation of $I_D$ increasing when $V_{GS}$ is increased is consistent with theory.
 
 
 \begin{figure}[H]
@@ -219,5 +219,5 @@ The circuit is restored to its original state by reconstructing $V_B$ as the saw
 From the plot in Figure 15, $I_D$ during saturation is lower for higher temperatures compared to $I_D$ at lower temperatures. At gate voltages significantly greater than the threshold voltage, drain current decreases as temperature increases. As temperature increases, carrier mobility decreases. Thus, when the gate voltage is significantly greater than the threshold voltage, the carrier mobility decreases which causes the drain current to be lower.
 
 \section{Conclusion}
-In conclusion, we learned about the DC characteristics of MOSFETs by simulation them in PSPICE. At first, we analyzed the MOSFET $I_D-V_{DS}$ characteristics through multiple experiments and plots. We found characteristics such as the NMOS threshold and the early voltage. In the second part, we ran studies to find the transconductance $g_m$ of our device. Finally, we plot the $I_D-V_{DS}$ characteristics of our device at different temperatures to study MOSFET temperature effects. All the mentioned analysis were also verified with the studied theory.
+In conclusion, we learned about the DC characteristics of MOSFETs by simulating them in PSPICE. At first, we analyzed the MOSFET $I_D-V_{DS}$ characteristics through multiple experiments and plots. We found characteristics such as the NMOS threshold and the early voltage. In the second part, we ran studies to find the transconductance $g_m$ of our device. Finally, we plot the $I_D-V_{DS}$ characteristics of our device at different temperatures to study MOSFET temperature effects. All the mentioned analysis were also verified with the studied theory.
 \end{document}
