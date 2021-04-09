@@ -35,21 +35,12 @@
 \clearpage
 
 \begin{abstract}
-
+    BJT’s are a type of transistor that can be used to make amplifier circuits; where an input voltage is multiplied by a certain gain factor and an output voltage of the input multiplied by the gain is produced across a load. There are different templates of BJT amplifier circuits, where the gain factor depends on the resistor values of the circuit. To design a BJT amplifier circuit, the resistor values of a template BJT amplifier circuit must be determined based on a set of requirements. In this laboratory, a BJT amplifier circuit is to be designed while meeting a certain set of requirements. Thus, different resistor values of a chosen BJT circuit template must be found based on the given requirements. PSPICE circuit simulation software is to be used to test the circuit to see if the given requirements are met and to investigate temperature characteristics of the circuit.
 \end{abstract}
 
 \section{Introduction}
+This lab requires the design of a BJT amplifier circuit based on the following requirements:
 
-\section{Analysis}
-\subsection{Theoretical Design}
-The BJT amplifier circuit chosen for this lab is the common emitter amplifier without $R_e$ shown in Figure 1. To design the circuit, the values of the resistors $R_1$, $R_2$, $R{sig}$, $R_C$ and $R_E$ must be determined through theoretical calculations based on a set of requirements. Also, the values of the capacitors must be determined based on a bandwidth requirement.\\
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.35]{F1}
-    \caption{Design template circuit schematic}
-\end{figure}
-\\
-The requirements of the BJT amplifier for this circuit are:
 \begin{itemize}
     \item The circuit must be capable of operating off a $9V$ battery ($V_{CC} = 9V$)
     \item The voltage gain magnitude must be between $45\sfrac{V}{V}$ and $55\sfrac{V}{V}$ ($45\sfrac{V}{V} \leq \frac{V_{out}}{V_{in}} \leq 55\sfrac{V}{V}$)
@@ -58,7 +49,25 @@ The requirements of the BJT amplifier for this circuit are:
     \item The $3dB$ bandwidth must be greater than $10KHz$\\
 
 \end{itemize}
+
+For the BJT amplifier circuit template, the common emitter amplifier without $R_e$ is chosen. This circuit template can be seen in Figure 1. The resistor values of $R_{sig}$, $R_1$, $R_2$, $R_C$ and $R_E$ are found through theoretical means based on the given requirements. Also, the capacitor values of CC1, CC2 and CE are also found based on the given requirements.
+
+To find the resistor values theoretically, both AC and DC analysis are performed, and a set of equations are derived. Also, several circuit parameter values are assumed to calculate the required resistances.
+
+Once the values for the resistors and capacitors are determined theoretically, the circuit needs to be tested using circuit simulation software to verify the theoretical circuit parameter values. The circuit is constructed using PSPICE circuit simulation software and an AC sweep simulation is performed. By performing an AC sweep and plotting the gain of the circuit against frequency, the voltage gain of the circuit and the bandwidth are determined, and the parameter values are verified.
+
+Finally, a temperature sweep simulation is performed on the amplifier circuit to examine the effects of temperature on the gain of the amplifier circuit. This is done by plotting the gain against frequency of the circuit at different temperatures.
+\section{Analysis}
+\subsection{Theoretical Design}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.35]{F1}
+    \caption{Design template circuit schematic}
+\end{figure}
+\\
 First, AC analysis is performed on the circuit, where a small signal model of the circuit is created. The small signal model, using the hybrid-$\pi$ model, can be seen in Figure 5. Using the small signal model, an expression for the input resistance $R_{in}$ is found in terms of $R_1$, $R_2$ and $r_\pi$. The expression for $R_{in}$ can be seen in Equation 1 of Appendix A. Also, an expression for the voltage gain in terms of $\beta$ , $r_\pi$, $R_C$ and $R_L$ is found and can be seen in Equation 7 of Appendix A. The small signal analysis and the full derivation of the expression for the voltage gain can be seen in Appendix A.
+
+Second, DC analysis is performed on the circuit; a DC model of the circuit is created. The DC model of the circuit can be seen in Figure 6 Using the DC model, an expression for $V_B$ is found in terms of $I_B$, $R_1$, $R_2$ and VCC. The expression for the $V_B$ can be seen in Equation 8 of Appendix B. The derivation of the expression for VB using the DC circuit is shown in Appendix B.
 
 Next, values for $R_1$, $R_2$ and $R_{sig}$ are chosen, as well as a value for $\beta$. The value for $\beta$ is chosen to be 100 because  $\beta$ is often between 50 and 150 and 100 is an easy value to do calculations with. $R_1$ and $R_2$ are chosen to be $10K\Omega$ and $R_{sig}$ is chosen to be $1K\Omega$. These values are chosen because most resistor values seen in class are in the thousands and the values chosen are easy to do calculations with.
 
@@ -101,6 +110,7 @@ The correctness of our design can be determined by performing an AC sweep analys
 \end{figure}
 Next, an AC temperature sweep was performed on the amplifier circuit. The simulation was performed at temperatures of 0, 25, 50, 75 and 100 \degree C. A graph of voltage gain vs frequency at each of these temperatures is created so that the effect of temperature on the amplifier can be examined. The graph of voltage gain vs frequency at different temperatures can be seen in Figure 4. The traces of the gain at 0, 25, 50, 75 and 100 \degree C are represented by green, red, blue yellow and purple traces respectively. Based on the plot in Figure 4, the voltage gain decreased as temperature increased. The parameters of transistors change as the temperature changes, thus resulting in a change in the gain.
 \section{Conclusion}
+To conclude, in this laboratory, we designed a BJT amplifier given specific requirements. This design exercise required us to design a template circuit and find unknown circuit component values such as resistors and capacitors. We found circuit components by performing theoretical calculations using the small signal model. We then modelled the circuit in PSPICE and performed simulations to validate our design. We followed by studying the temperature characteristics of the designed amplifier. We concluded this design project by finding an inverse proportionality relation between temperature and amplifier voltage gain.
 \clearpage
 
 \section{Appendices}
@@ -170,6 +180,7 @@ $
 \begin{cases}
     R_1 = R_2 = 10K\Omega\\
     R_{sig} = 1K\Omega\\
+    R_{in} = 1K\Omega\\
     \beta = 100
 \end{cases}$ and From Equation (1) we find $r_\pi$:\\
 \[R_{in} = R_1 || R_2 || r_\pi = 1K\Omega \Rightarrow r_\pi = 1250\Omega\]\\
