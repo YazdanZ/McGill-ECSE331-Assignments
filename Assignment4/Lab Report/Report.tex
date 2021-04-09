@@ -61,21 +61,21 @@ Finally, a temperature sweep simulation is performed on the amplifier circuit to
 \subsection{Theoretical Design}
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.35]{F1}
+    \includegraphics[scale=1.3]{F1}
     \caption{Design template circuit schematic}
 \end{figure}
-\\
-First, AC analysis is performed on the circuit, where a small signal model of the circuit is created. The small signal model, using the hybrid-$\pi$ model, can be seen in Figure 5. Using the small signal model, an expression for the input resistance $R_{in}$ is found in terms of $R_1$, $R_2$ and $r_\pi$. The expression for $R_{in}$ can be seen in Equation 1 of Appendix A. Also, an expression for the voltage gain in terms of $\beta$ , $r_\pi$, $R_C$ and $R_L$ is found and can be seen in Equation 7 of Appendix A. The small signal analysis and the full derivation of the expression for the voltage gain can be seen in Appendix A.
 
-Second, DC analysis is performed on the circuit; a DC model of the circuit is created. The DC model of the circuit can be seen in Figure 6 Using the DC model, an expression for $V_B$ is found in terms of $I_B$, $R_1$, $R_2$ and VCC. The expression for the $V_B$ can be seen in Equation 8 of Appendix B. The derivation of the expression for VB using the DC circuit is shown in Appendix B.
+First, AC analysis is performed on the circuit, where a small signal model of the circuit is created. The small signal model, using the hybrid-$\pi$ model, can be seen in Figure 5. Using the small signal model, an expression for the input resistance $R_{in}$ is found in terms of $R_1$, $R_2$ and $r_\pi$. The expression for $R_{in}$ can be seen in Equation 1 of Appendix A. Also, an expression for the voltage gain in terms of $\beta$ , $r_\pi$, $R_C$ and $R_L$ is found and can be seen in Equation 6 of Appendix A. The small signal analysis and the full derivation of the expression for the voltage gain can be seen in Appendix A.
+
+Second, DC analysis is performed on the circuit; a DC model of the circuit is created. The DC model of the circuit can be seen in Figure 6. Using the DC model, an expression for $V_B$ is found in terms of $I_B$, $R_1$, $R_2$ and VCC. The expression for the $V_B$ can be seen in Equation 8 of Appendix B. The derivation of the expression for VB using the DC circuit is shown in Appendix B.
 
 Next, values for $R_1$, $R_2$ and $R_{sig}$ are chosen, as well as a value for $\beta$. The value for $\beta$ is chosen to be 100 because  $\beta$ is often between 50 and 150 and 100 is an easy value to do calculations with. $R_1$ and $R_2$ are chosen to be $10K\Omega$ and $R_{sig}$ is chosen to be $1K\Omega$. These values are chosen because most resistor values seen in class are in the thousands and the values chosen are easy to do calculations with.
 
-Once values for $R_1$ and $R_2$ are chosen, a value for $r_\pi$ is found using the expression for $R_{in}$ derived using AC analysis. Based on the requirement that $R_{in}$ has to be greater or equal to $1K\Omega$, the value for $R_{in}$ is chosen to be $1K\Omega$. Now that values for $R_1$, $R_2$ and $R_{in}$ known, the value for $r_\pi$, using the $R_{in}$ expression, is found to be $1.25K\Omega$. The calculations for $r_\pi$ can be seen in Appendix B.
+Once values for $R_1$ and $R_2$ are chosen, a value for $r_\pi$ is found using the expression for $R_{in}$ derived using AC analysis. Based on the requirement that $R_{in}$ has to be greater or equal to $1K\Omega$, the value for $R_{in}$ is chosen to be $1K\Omega$. Now that values for $R_1$, $R_2$ and $R_{in}$ are known, the value for $r_\pi$, using the $R_{in}$ expression, is found to be $1.25K\Omega$. The calculations for $r_\pi$ can be seen in Appendix B.
 
 Now that the value for $r_\pi$ is known, a value for $R_C$ can be found using the expression for voltage gain, which was derived using AC analysis. Knowing that the value for $\sfrac{V_{out}}{V_{in}}$ must be between $45\sfrac{V}{V}$ and $55\sfrac{V}{V}$, the value for $\sfrac{V_{out}}{V_{in}}$ is chosen to be $50\sfrac{V}{V}$. Knowing that the value for $R_L$ is required to be $10K\Omega$, the value for $R_C$ can be found using the expression for voltage gain as values $\sfrac{V_{out}}{V_{in}}$, $r_\pi$ and $R_L$ are known. The value for $R_C$ is found to be $666.67\Omega$. The relevant calculations for can be seen in Appendix B.\\
 
-Next, the value for RE is found. The process of finding RE requires multiple calculation steps. The calculations for finding RE can be seen in Appendix B.
+Next, the value for $R_E$ is found. The process of finding $R_E$ requires multiple calculation steps. The calculations for finding $R_E$ can be seen in Appendix B.
 \begin{enumerate}
     \item Find the value of $I_B$. Using the expression for $r_\pi$ in terms of $V_T$ and $I_B$, the value for $I_B$ is found to be $2\times 10^{-5} A$ since the values for $r_\pi$  and $V_T$ are known.
     \item  Use the expression for $V_B$, derived using DC analysis, to find the value for $V_B$ now that the value for $I_B$ is found. Since all values for the variables in the expression for $V_B$ are known, the value for $V_B$ is found to be $4.4V$.
@@ -84,7 +84,7 @@ Next, the value for RE is found. The process of finding RE requires multiple cal
 
 \end{enumerate}
 \subsection{Implementation of the design in PSPICE}
-The values of the capacitors are known be used to determine the bandwidth of the amplifier circuit. The capacitor values are most likely to be relatively large, therefore, relatively large capacitor values were chosen. Both CC1 and CC2 were chosen to have values of $10000F$ while CE was chosen to have a value of $0.000039F$. To determine whether the values of the capacitors are acceptable, a plot of voltage gain vs frequency was created to examine the bandwidth. The bandwidth was determined to be well over $10KHz$, thus satisfying the bandwidth requirement of the circuit.
+The values of the capacitors are known be used to determine the bandwidth of the amplifier circuit. The capacitor values are most likely to be relatively large, therefore, relatively large capacitor values were chosen. Both CC1 and CC2 were chosen to have values of $10000F$ while CE was chosen to have a value of $0.000039F$. To determine whether the values of the capacitors are acceptable, a plot of voltage gain vs frequency was created to examine the bandwidth. The bandwidth was determined to be well over $10KHz$, thus satisfying the bandwidth requirement of the circuit as seen in Figure 3.
 
 We Compile found values for unknown resistors and capacitors in Figure 1 for the BJT amplifier, into the circuit schematic shown in Figure 2 in PSPICE.
 
