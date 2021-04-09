@@ -1,0 +1,125 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{physics}
+\IEEEoverridecommandlockouts
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{xfrac}
+\usepackage{float}
+\graphicspath{ {./images/}  }
+
+\begin{document}
+
+\title{ECSE 331\\
+    Laboratory No. 4\\
+    Design of a BJT Amplifier in PSPICE\\
+    \Large \today\\
+}
+
+\author
+{
+    \IEEEauthorblockN{Seyed Yazdan Zinati}
+    \IEEEauthorblockA{260928077 \\
+    \textit{seyed.zinati@mail.mcgill.ca}}
+
+    \and
+
+    \IEEEauthorblockN{James Wu}
+    \IEEEauthorblockA{260929944 \\
+    \textit{james.wu4@mail.mcgill.ca}}
+}
+\maketitle
+\clearpage
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+
+\section{Analysis}
+
+\section{Conclusion}
+\clearpage
+
+\section{Appendices}
+\subsection{Small Signal Model (AC Analysis)}
+\noindent From the small signal model we can deduce:
+\begin{equation}
+    R{in} = R_1 || R_2 || r_\pi
+\end{equation}
+\vspace{0.3cm}
+
+\noindent$r_\pi = \sfrac{V_T}{I_B}$ and $V_T = 25\times 10^{-3}V$ therefore:
+\begin{equation}
+    I_B = \frac{V_T}{r_\pi} = \frac{25 \times 10^{-3}}{r_\pi}
+\end{equation}
+\vspace{0.3cm}
+
+\noindent Write $V_{out}$ as a function of $i_b$ and $i_b$ as a function of $V_{in}$:
+\begin{equation}
+    V_{out} = -\beta i_b (R_C || R_L)
+\end{equation}
+\begin{equation}
+    i_b = \sfrac{V_{in}}{r_{\pi}}
+\end{equation}
+\vspace{0.3cm}
+
+
+\noindent From (3) and (4) we can write $V_{out}$ as follows:
+\begin{equation}
+    V_{out} = -\beta \frac{V_{in}}{r_\pi} (R_C || R_L)
+\end{equation}
+\vspace{0.3cm}
+
+\noindent Rewriting Equation (5) we get the following:
+%
+\begin{equation}
+    \frac{V_{out}}{V_{in}} = \abs{\frac{-\beta}{r_\pi} (R_C || R_L)} \Rightarrow \frac{V_{out}}{V_{in}} = \frac{\beta}{r_\pi} (R_C || R_L)
+\end{equation}\\
+
+
+
+\subsection{(Small Signal Model) DC Analysis}
+\begin{equation}
+    V_B - V_E = 0.7V
+\end{equation}
+
+\begin{equation}
+    \frac{V_{CC} - V_B}{R_1} = I_B + \frac{V_B}{R_2} \Rightarrow V_B = \frac{-I_B R_1 R_2 - V_{CC} R_2}{R_1 + R_2}
+\end{equation}
+\vspace{0.5cm}
+
+\noindent Choosing the following parameters:
+$
+\begin{cases}
+    R_1 = R_2 = 10K\Omega\\
+    R_{sig} = 1K\Omega\\
+    \beta = 100
+\end{cases}$ and From Equation (1) we find $r_\pi$:\\
+\[R_{in} = R_1 || R_2 || r_\pi = 1K\Omega \Rightarrow r_\pi = 1250\Omega\]\\
+
+\noindent From Equation (2) we find $I_B$:
+\[I_B = \frac{25 \times10^{-3}}{1250} = 2 \times 10^{-5}A\]\\
+
+\noindent Finding $R_C$ using (6) and knowing that $R_L = 10K\Omega$:\\
+\[\frac{V_{out}}{V_{in}} = \frac{100(R_C || R_L)}{r_\pi} = 50 \Rightarrow \boxed{R_C = 666.67\Omega}\]\\
+
+\noindent Using Equation (8) with $V_{CC} = 9V$, we find $V_B = 4.4V$ so from (7), we get $V_E = 3.7V$.
+
+\[I_E = (\beta + 1)I_B \Rightarrow I_E = 2.02 \times 10^{-3}A\]
+\[R_E = \frac{V_E}{I_E} \Rightarrow \boxed{R_E = 1831.68\Omega}\]
+
+\vspace{2cm}
+
+Resistor values to be used in our design:\\
+\center
+\begin{cases}
+    R_1 = 10K\Omega\\
+    R_2 = 10K\Omega\\
+    R_{sig} = 1K\Omega\\
+    RC = 666.67 \Omega\\
+    R_E = 1831.68\Omega
+\end{cases}
+\end{document}
