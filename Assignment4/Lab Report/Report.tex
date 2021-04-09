@@ -1,10 +1,12 @@
 \documentclass[conference]{IEEEtran}
+\usepackage[product-units=repeat]{siunitx}
 \usepackage{physics}
 \IEEEoverridecommandlockouts
 \usepackage{blindtext}
 \usepackage{amsmath}
 \usepackage{gensymb}
 \usepackage{graphicx}
+\usepackage{flafter}
 \usepackage{xfrac}
 \usepackage{float}
 \graphicspath{ {./images/}  }
@@ -39,12 +41,79 @@
 \section{Introduction}
 
 \section{Analysis}
+\subsection{Theoretical Design}
+The BJT amplifier circuit chosen for this lab is the common emitter amplifier without $R_e$ shown in Figure 1. To design the circuit, the values of the resistors $R_1$, $R_2$, $R{sig}$, $R_C$ and $R_E$ must be determined through theoretical calculations based on a set of requirements. Also, the values of the capacitors must be determined based on a bandwidth requirement.\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.35]{F1}
+    \caption{Design template circuit schematic}
+\end{figure}
+\\
+The requirements of the BJT amplifier for this circuit are:
+\begin{itemize}
+    \item The circuit must be capable of operating off a $9V$ battery ($V_{CC} = 9V$)
+    \item The voltage gain magnitude must be between $45\sfrac{V}{V}$ and $55\sfrac{V}{V}$ ($45\sfrac{V}{V} \leq \frac{V_{out}}{V_{in}} \leq 55\sfrac{V}{V}$)
+    \item The circuit must drive a load of $10K\Omega$ ($R_L = 10K\Omega$)
+    \item The circuit must have an input resistance of at least $1K\Omega$ ($R_{in} \geq 1K\Omega$)
+    \item The $3dB$ bandwidth must be greater than $10KHz$\\
 
+\end{itemize}
+First, AC analysis is performed on the circuit, where a small signal model of the circuit is created. The small signal model, using the hybrid-$\pi$ model, can be seen in Figure 5. Using the small signal model, an expression for the input resistance $R_{in}$ is found in terms of $R_1$, $R_2$ and $r_\pi$. The expression for $R_{in}$ can be seen in Equation 1 of Appendix A. Also, an expression for the voltage gain in terms of $\beta$ , $r_\pi$, $R_C$ and $R_L$ is found and can be seen in Equation 7 of Appendix A. The small signal analysis and the full derivation of the expression for the voltage gain can be seen in Appendix A.
+
+Next, values for $R_1$, $R_2$ and $R_{sig}$ are chosen, as well as a value for $\beta$. The value for $\beta$ is chosen to be 100 because  $\beta$ is often between 50 and 150 and 100 is an easy value to do calculations with. $R_1$ and $R_2$ are chosen to be $10K\Omega$ and $R_{sig}$ is chosen to be $1K\Omega$. These values are chosen because most resistor values seen in class are in the thousands and the values chosen are easy to do calculations with.
+
+Once values for $R_1$ and $R_2$ are chosen, a value for $r_\pi$ is found using the expression for $R_{in}$ derived using AC analysis. Based on the requirement that $R_{in}$ has to be greater or equal to $1K\Omega$, the value for $R_{in}$ is chosen to be $1K\Omega$. Now that values for $R_1$, $R_2$ and $R_{in}$ known, the value for $r_\pi$, using the $R_{in}$ expression, is found to be $1.25K\Omega$. The calculations for $r_\pi$ can be seen in Appendix B.
+
+Now that the value for $r_\pi$ is known, a value for $R_C$ can be found using the expression for voltage gain, which was derived using AC analysis. Knowing that the value for $\sfrac{V_{out}}{V_{in}}$ must be between $45\sfrac{V}{V}$ and $55\sfrac{V}{V}$, the value for $\sfrac{V_{out}}{V_{in}}$ is chosen to be $50\sfrac{V}{V}$. Knowing that the value for $R_L$ is required to be $10K\Omega$, the value for $R_C$ can be found using the expression for voltage gain as values $\sfrac{V_{out}}{V_{in}}$, $r_\pi$ and $R_L$ are known. The value for $R_C$ is found to be $666.67\Omega$. The relevant calculations for can be seen in Appendix B.\\
+
+Next, the value for RE is found. The process of finding RE requires multiple calculation steps. The calculations for finding RE can be seen in Appendix B.
+\begin{enumerate}
+    \item Find the value of $I_B$. Using the expression for $r_\pi$ in terms of $V_T$ and $I_B$, the value for $I_B$ is found to be $2\times 10^{-5} A$ since the values for $r_\pi$  and $V_T$ are known.
+    \item  Use the expression for $V_B$, derived using DC analysis, to find the value for $V_B$ now that the value for $I_B$ is found. Since all values for the variables in the expression for $V_B$ are known, the value for $V_B$ is found to be $4.4V$.
+    \item Using $V_B$ and $I_B$, values for $V_E$ and $I_E$ are found. Knowing that the value for $V_E$ is $0.7V$ less than the value of $V_B$, the value of $V_E$ is determined to be $3.7V$. Also, the value for $I_E$ is determined to be $2.02\times 10^{-3} A$ since $I_E$ is equal to $I_B\times(\beta+1)$.
+    \item Finally, knowing the values for $V_E$ and $I_E$, the value for $R_E$ is found by dividing $V_E$ by $I_E$. The value of $R_E$ is found to be $1831.68\Omega$.
+
+\end{enumerate}
+\subsection{Implementation of the design in PSPICE}
+The values of the capacitors are known be used to determine the bandwidth of the amplifier circuit. The capacitor values are most likely to be relatively large, therefore, relatively large capacitor values were chosen. Both CC1 and CC2 were chosen to have values of $10000F$ while CE was chosen to have a value of $0.000039F$. To determine whether the values of the capacitors are acceptable, a plot of voltage gain vs frequency was created to examine the bandwidth. The bandwidth was determined to be well over $10KHz$, thus satisfying the bandwidth requirement of the circuit.
+
+We Compile found values for unknown resistors and capacitors in Figure 1 for the BJT amplifier, into the circuit schematic shown in Figure 2 in PSPICE.
+
+The correctness of our design can be determined by performing an AC sweep analysis on the amplifier circuit to determine the actual gain of the circuit. The gain can be seen by creating a graph of $\sfrac{V_{out}}{V_{in}}$ vs frequency and observing which gain value the trace will reach. The plot of $\sfrac{V_{out}}{V_{in}}$ vs frequency can be seen in Figure 3. From the plot, the gain is determined to be $46.9\sfrac{V}{V}$, which is within the required range for the gain. Therefore, the calculated resistor values are acceptable based on the gain requirement.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.24]{F4}
+    \caption{BJT Amplifier design circuit schematic}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.26]{F5}
+    \caption{BJT Amplifier $\sfrac{V_{out}}{V_{in}}$ as a function of frequency}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.26]{F6}
+    \caption{BJT Amplifier $\sfrac{V_{out}}{V_{in}}$ as a function of frequency at 0\degree C, 25\degree C, 50\degree C, 75\degree C, and 100\degree C}
+\end{figure}
+Next, an AC temperature sweep was performed on the amplifier circuit. The simulation was performed at temperatures of 0, 25, 50, 75 and 100 \degree C. A graph of voltage gain vs frequency at each of these temperatures is created so that the effect of temperature on the amplifier can be examined. The graph of voltage gain vs frequency at different temperatures can be seen in Figure 4. The traces of the gain at 0, 25, 50, 75 and 100 \degree C are represented by green, red, blue yellow and purple traces respectively. Based on the plot in Figure 4, the voltage gain decreased as temperature increased. The parameters of transistors change as the temperature changes, thus resulting in a change in the gain.
 \section{Conclusion}
 \clearpage
 
 \section{Appendices}
+We need to find resistor values for $R_1$, $R_2$, $R_{sig}$, $R_E$, and $R_C$ in Figure 5.
+
 \subsection{Small Signal Model (AC Analysis)}
+\
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.45]{F2}
+    \caption{Small signal model (AC Analysis) circuit}
+\end{figure}
+
 \noindent From the small signal model we can deduce:
 \begin{equation}
     R{in} = R_1 || R_2 || r_\pi
@@ -82,6 +151,11 @@
 
 
 \subsection{(Small Signal Model) DC Analysis}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.48]{F3}
+    \caption{DC Analysis circuit}
+\end{figure}
 \begin{equation}
     V_B - V_E = 0.7V
 \end{equation}
@@ -115,11 +189,13 @@ $
 
 Resistor values to be used in our design:\\
 \center
-\begin{cases}
+$\begin{cases}
     R_1 = 10K\Omega\\
     R_2 = 10K\Omega\\
     R_{sig} = 1K\Omega\\
     RC = 666.67 \Omega\\
     R_E = 1831.68\Omega
-\end{cases}
+\end{cases}$
+
+
 \end{document}
